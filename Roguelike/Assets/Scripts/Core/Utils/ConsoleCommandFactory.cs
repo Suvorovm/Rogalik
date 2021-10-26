@@ -1,6 +1,7 @@
 ﻿using IngameDebugConsole;
 using JetBrains.Annotations;
 using Roguelike;
+using Roguelike.Service;
 using UnityEngine;
 
 namespace Core.Utils
@@ -14,12 +15,12 @@ namespace Core.Utils
             Debug.LogWarning("You are GAY!!!");
         }
         
-        [ConsoleMethod("testGA", "Test Game application ")]
+        [ConsoleMethod("testHealth", "Test Game application ")]
         [UsedImplicitly]
         public static void TestGameApplication()
         {
             HealthService healthService = GameApplication.RequireService<HealthService>();
-            healthService.IncreaseHealth(10);
+            healthService.DecreaseHealth(10);
             Debug.Log(healthService.ToString());
         }
         
