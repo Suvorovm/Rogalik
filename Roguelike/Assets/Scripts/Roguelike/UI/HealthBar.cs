@@ -11,7 +11,7 @@ namespace Roguelike.UI
 
         public void UpdateBar(float health)
         {
-            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, health, 1.2f * Time.deltaTime);
+            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, health,2f);//должно быть плавно, но из-за дельта тайма не пашет
             ChangeColor(health);
         }
 

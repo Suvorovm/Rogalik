@@ -13,21 +13,21 @@ namespace Roguelike.Service
         private void Awake()
         {
             _healthBar = GetComponentInChildren<HealthBar>();
-            _healthBar.UpdateBar(_maxHealth / 100);
+            _healthBar.UpdateBar((float)_maxHealth/100);
         }
 
         public void IncreaseHealth(int health)
         {
             _health += health;
-            if (_health > _maxHealth) _health = 1;
-            _healthBar.UpdateBar(health / 100);
+            if (_health > _maxHealth) _health = 100;
+            _healthBar.UpdateBar(_health);
         }
 
         public void DecreaseHealth(int health)
         {
             _health -= health;
             if (_health < 0) _health = 0;
-            _healthBar.UpdateBar(health / 100);
+            _healthBar.UpdateBar((float)_health/100);
         }
     }
 }

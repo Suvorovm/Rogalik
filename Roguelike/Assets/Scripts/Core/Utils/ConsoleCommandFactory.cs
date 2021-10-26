@@ -20,7 +20,7 @@ namespace Core.Utils
         public static void TestGameApplication()
         {
             HealthService healthService = GameApplication.RequireService<HealthService>();
-            healthService.DecreaseHealth(10);
+            healthService.DecreaseHealth(20);
             Debug.Log(healthService.ToString());
         }
         
