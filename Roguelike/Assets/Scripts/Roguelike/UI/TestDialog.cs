@@ -9,21 +9,24 @@ namespace Roguelike.UI
         private Button _attackButton;
         [SerializeField]
         private Button _suckButton;
+        private PlayerAttackService _playerAttackService;
 
         private void Awake()
         {
             _attackButton.onClick.AddListener(OnAttackButtonClick); 
-            _suckButton.onClick.AddListener(OnSuckButtonClick); 
+            _suckButton.onClick.AddListener(OnSuckButtonClick);
+            _playerAttackService = GameApplication.RequireService<PlayerAttackService>();
         }
 
         private void OnSuckButtonClick()
         {
-            Debug.LogWarning("Suck");
+            _playerAttackService.Shoot();
+            
         }
 
         private void OnAttackButtonClick()
         {
-            Debug.LogWarning("Attacked");
+            _playerAttackService.Attack();
         }
         
     }
