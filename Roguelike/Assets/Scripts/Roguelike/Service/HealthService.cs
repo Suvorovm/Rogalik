@@ -1,4 +1,4 @@
-﻿using Roguelike.UI;
+using Roguelike.UI;
 using UnityEngine;
 
 namespace Roguelike.Service
@@ -20,7 +20,7 @@ namespace Roguelike.Service
         {
             _health += health;
             if (_health > _maxHealth) _health = 100;
-            _healthBar.UpdateBar(_health);
+            _healthBar.UpdateBar((float)_health/100);
         }
 
         public void DecreaseHealth(int health)
