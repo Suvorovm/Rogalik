@@ -286,6 +286,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5809980634261347176, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
   m_PrefabInstance: {fileID: 5809980633552552587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1000563245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5809980635282254720, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
+  m_PrefabInstance: {fileID: 5809980633552552587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1391353080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5925298813573757789, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
@@ -663,6 +668,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1391353080}
+    - target: {fileID: 3756640460099684372, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
+      propertyPath: OtherGameObject
+      value: 
+      objectReference: {fileID: 1000563245}
     - target: {fileID: 5809980634352927126, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
       propertyPath: m_RootOrder
       value: 2
