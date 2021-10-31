@@ -34,8 +34,13 @@ namespace Roguelike.Service
         public void DecreaseHealth(int health)
         {
             _health -= health;
-            if (_health < 0) _health = 0;
+            if (_health <= 0)
+            {
+                _health = 0;
+                Death();
+            }
             _healthBar.UpdateBar((float)_health/100);
+            
         }
 
         
@@ -43,12 +48,7 @@ namespace Roguelike.Service
         {
             _controls.enabled = false;
             Debug.Log("i dead");
+        }
         
-
-        }
-        private void FixedUpdate()
-        {
-            if (_health == 0) Death();
-        }
     }
 }
