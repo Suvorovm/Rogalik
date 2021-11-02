@@ -10,8 +10,7 @@ namespace Roguelike.Service
         [SerializeField]
         private GameObject _otherGameObject;
 
-        [SerializeField] private GameObject _deathMenu;
-        [SerializeField] private GameObject _ui;
+        
         
         private static int _maxHealth = 100;
         private int _health = _maxHealth;
@@ -56,7 +55,7 @@ namespace Roguelike.Service
         {
             _controls.enabled = false;
             Debug.Log("i dead");
-            _uiService.CreatePrefabObject(_deathMenu,"MainScreen");
+            _uiService.CreatePrefabObject("UI/Game/DeathMenu/DeathMenu","MainScreen");
         }
         
     }
