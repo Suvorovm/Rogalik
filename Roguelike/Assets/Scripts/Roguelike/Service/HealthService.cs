@@ -7,17 +7,25 @@ namespace Roguelike.Service
 {
     public class HealthService : MonoBehaviour
     {
-        public GameObject OtherGameObject;
+        [SerializeField]
+        private GameObject _otherGameObject;
+
+        [SerializeField] private GameObject _deathMenu;
+        [SerializeField] private GameObject _ui;
         
         private static int _maxHealth = 100;
         private int _health = _maxHealth;
+        
         private PlayerMovement _controls;
+        private UIService _uiService;
 
         private HealthBar _healthBar;
 
         private void Awake()
         {
-            _controls = OtherGameObject.GetComponent<PlayerMovement>();
+            _controls = _otherGameObject.GetComponent<PlayerMovement>();
+            _uiService = GetComponent<UIService>();
+            
             _healthBar = GetComponentInChildren<HealthBar>();
             _healthBar.UpdateBar((float)_maxHealth/100);
             
@@ -48,6 +56,7 @@ namespace Roguelike.Service
         {
             _controls.enabled = false;
             Debug.Log("i dead");
+            _uiService.CreatePrefabObject(_deathMenu,"MainScreen");
         }
         
     }
