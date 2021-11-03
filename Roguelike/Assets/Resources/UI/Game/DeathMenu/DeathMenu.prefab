@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6829447413585326059}
   - component: {fileID: 1112262171553993351}
   m_Layer: 5
-  m_Name: Death Menu
+  m_Name: DeathMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _restartButton: {fileID: 6829447414886802578}
+  _mainMenuButton: {fileID: 6829447413995170038}
 --- !u!1 &6829447413995170036
 GameObject:
   m_ObjectHideFlags: 0

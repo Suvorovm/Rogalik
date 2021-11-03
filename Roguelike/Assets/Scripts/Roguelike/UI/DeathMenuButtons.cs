@@ -14,12 +14,20 @@ namespace Roguelike.UI
     {
         [SerializeField]
         private Button _restartButton;
+        [SerializeField]
+        private Button _mainMenuButton;
         private void Awake()
         {
             _restartButton.onClick.AddListener(Restart);
+            _mainMenuButton.onClick.AddListener(GoToMainMenu);
         }
 
         private void Restart()
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
+        private void GoToMainMenu()
         {
             SceneManager.LoadScene("SampleScene");
         }
