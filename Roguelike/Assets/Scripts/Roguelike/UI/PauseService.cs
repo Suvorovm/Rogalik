@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseScript : MonoBehaviour
+public class PauseService : MonoBehaviour
 {
-    bool isPaused = false;
+    bool Paused = false;
 
-    public void Pausegame()
+    public void CamelCase()
     {
-        if(isPaused)
+        if(Paused)
         {
             Time.timeScale = 1;
-             isPaused = false;
+             Paused = false;
         }
         else
         {
             Time.timeScale = 0;
-            isPaused = true;
+            Paused = true;
         }
         
     }
