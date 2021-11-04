@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
+    bool isPaused = false;
+
     public void Pausegame()
     {
-        if(Time.timeScale == 1)
-        Time.timeScale = 0;
+        if(isPaused)
+        {
+            Time.timeScale = 1;
+             isPaused = false;
+        }
         else
-        Time.timeScale = 1;
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+        }
+        
     }
 }
