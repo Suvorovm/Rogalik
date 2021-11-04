@@ -5,15 +5,16 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Roguelike.UI;
+using UnityEngine.UI;
 
 namespace Roguelike.Service
 {
-    public class UIService : MonoBehaviour
+    public class CreateService : MonoBehaviour
     {
         
         public void CreatePrefabObject( string reqObjectPath,[CanBeNull]string parentObject)
         {
-            AddGameObject(GetPrefabFromResources(reqObjectPath), GetParentObjectByName(parentObject));
+            AddGameObject(GetResource<GameObject>(reqObjectPath) , GetParentObjectByName(parentObject));
         }
 
         public void CreateObject(string reqObject, [CanBeNull] string parentObject)
@@ -47,9 +48,9 @@ namespace Roguelike.Service
         }
         
         //Загружает префаб по заданному пути
-        public GameObject GetPrefabFromResources(string prefabPath)
+        public static T GetResource<T>(string prefabPath) where T : Object 
         {
-            return Resources.Load<GameObject>(prefabPath);
+            return Resources.Load<T>(prefabPath);
         }
     }
 }

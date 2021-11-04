@@ -29,7 +29,7 @@ namespace Roguelike.UI
 
         private void GoToMainMenu()
         {
-            SceneManager.LoadScene("SampleScene");
+            Debug.Log("Должен перейти в главное меню");
         }
     }
     

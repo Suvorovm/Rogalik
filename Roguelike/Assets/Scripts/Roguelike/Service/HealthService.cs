@@ -1,4 +1,5 @@
 using System;
+using Core;
 using Roguelike.UI;
 using UnityEngine;
 using IngameDebugConsole;
@@ -16,14 +17,18 @@ namespace Roguelike.Service
         private int _health = _maxHealth;
         
         private PlayerMovement _controls;
-        private UIService _uiService;
+        private CreateService _crService;
 
         private HealthBar _healthBar;
-
+        
+        // Путь к меню смерти
+        private const string _deathMenuPath = "UI/Game/DeathMenu/DeathMenu";
+        // Название объекта parent
+        private const string _uiParentName = "MainScreen";
         private void Awake()
         {
             _controls = _otherGameObject.GetComponent<PlayerMovement>();
-            _uiService = GetComponent<UIService>();
+            _crService = GameApplication.RequireService<CreateService>();
             
             _healthBar = GetComponentInChildren<HealthBar>();
             _healthBar.UpdateBar((float)_maxHealth/100);
@@ -55,7 +60,7 @@ namespace Roguelike.Service
         {
             _controls.enabled = false;
             Debug.Log("i dead");
-            _uiService.CreatePrefabObject("UI/Game/DeathMenu/DeathMenu","MainScreen");
+            _crService.CreatePrefabObject(_deathMenuPath,_uiParentName);
         }
         
     }
