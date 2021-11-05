@@ -16,6 +16,9 @@ public class FireballDamagingExplosion : MonoBehaviour
 
         Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+
+
+        
     }
     
 }
