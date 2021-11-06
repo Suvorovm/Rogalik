@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Roguelike.UI
 {
-   public class TestDialog : MonoBehaviour
+    public class TestDialog : MonoBehaviour
     {
-       [SerializeField]
+        [SerializeField]
         private Button _attackButton;
         [SerializeField]
         private Button _suckButton;
@@ -13,7 +14,7 @@ namespace Roguelike.UI
 
         private void Awake()
         {
-            _attackButton.onClick.AddListener(OnAttackButtonClick); 
+            _attackButton.onClick.AddListener(OnAttackButtonClick);
             _suckButton.onClick.AddListener(OnSuckButtonClick);
             _playerAttackService = GameApplication.RequireService<PlayerAttackService>();
         }
@@ -21,13 +22,11 @@ namespace Roguelike.UI
         private void OnSuckButtonClick()
         {
             _playerAttackService.Shoot();
-            
         }
 
         private void OnAttackButtonClick()
         {
             _playerAttackService.Attack();
         }
-        
     }
 }

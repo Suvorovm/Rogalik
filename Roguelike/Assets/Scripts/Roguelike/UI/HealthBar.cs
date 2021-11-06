@@ -8,10 +8,9 @@ namespace Roguelike.UI
         [SerializeField]
         private Image _healthBar;
 
-
         public void UpdateBar(float health)
         {
-            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, health,2f);//должно быть плавно, но из-за дельта тайма не пашет
+            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, health, 2f); //должно быть плавно, но из-за дельта тайма не пашет
             ChangeColor(health);
         }
 
@@ -19,6 +18,5 @@ namespace Roguelike.UI
         {
             _healthBar.color = Color.Lerp(Color.red, Color.green, (health));
         }
-
     }
 }
