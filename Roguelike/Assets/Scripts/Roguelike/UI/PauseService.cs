@@ -6,7 +6,7 @@ public class PauseService : MonoBehaviour
 {
     bool Paused = false;
 
-    public void CamelCase()
+    public void PauseGame()
     {
         if(Paused)
         {

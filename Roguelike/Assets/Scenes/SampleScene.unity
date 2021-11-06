@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563640422654060553, guid: 4597440ea2c5f7e42a76b2f19859bfde, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CamelCase
+      value: PauseGame
       objectReference: {fileID: 0}
     - target: {fileID: 4563640422654060553, guid: 4597440ea2c5f7e42a76b2f19859bfde, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
