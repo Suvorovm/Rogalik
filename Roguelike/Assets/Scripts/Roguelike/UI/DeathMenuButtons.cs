@@ -1,6 +1,6 @@
+using Core;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 namespace Roguelike.UI
 {
@@ -19,7 +19,7 @@ namespace Roguelike.UI
 
         private void Restart()
         {
-            SceneManager.LoadScene("SampleScene");
+            GameApplication.Restart();
         }
 
         private void GoToMainMenu()

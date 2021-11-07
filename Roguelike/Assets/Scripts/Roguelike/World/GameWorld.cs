@@ -17,11 +17,11 @@ namespace Roguelike.World
         [NotNull]
         public GameObject RequaireObjectByName(string objectName)
         {
-            GameObject gO = _gameWorldObjects.FirstOrDefault(o => o.name == objectName);
-            if (gO == null) {
+            GameObject go = _gameWorldObjects.FirstOrDefault(o => o.name == objectName);
+            if (go == null) {
                 throw new NullReferenceException($"Объекта с именем {objectName} нет в игровом мире");
             }
-            return gO;
+            return go;
         }
         
         [CanBeNull]

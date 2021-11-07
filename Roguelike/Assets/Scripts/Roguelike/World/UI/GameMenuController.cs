@@ -1,5 +1,4 @@
-﻿using System;
-using Core;
+﻿using Core;
 using Roguelike.Components;
 using Roguelike.World.Service;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Roguelike.World.UI
 {
-    public class GameOverlayController : MonoBehaviour
+    public class GameMenuController : MonoBehaviour
     {
         [SerializeField]
         private HealthBar _healthBar;

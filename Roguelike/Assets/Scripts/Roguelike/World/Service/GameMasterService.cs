@@ -14,7 +14,7 @@ namespace Roguelike.World.Service
             _healthService = GameApplication.RequireService<HealthService>();
             _pauseService = GameApplication.RequireService<PauseService>();
         }
-
+        
         public void PauseGame()
         {
             _pauseService.ChangePauseState();
