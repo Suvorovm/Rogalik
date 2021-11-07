@@ -14,7 +14,6 @@ namespace Core
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        
         public static T RequireService<T>()
         {
             if (_mainObject == null) {

@@ -7,7 +7,7 @@ namespace Roguelike.Service
         private bool _pause;
         private float _timeScaleBeforePause;
 
-        public void ChangeGameTimeScale()
+        public void ChangePauseState()
         {
             if (_pause) {
                 UnPauseGame();

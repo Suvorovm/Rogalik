@@ -1,9 +1,7 @@
 ﻿using IngameDebugConsole;
 using JetBrains.Annotations;
-using Roguelike;
-using Roguelike.Service;
+using Roguelike.World.Service;
 using UnityEngine;
-
 namespace Core.Utils
 {
     public class ConsoleCommandFactory : MonoBehaviour
