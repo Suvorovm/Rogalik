@@ -1,0 +1,984 @@
+fileFormatVersion: 2
+guid: fbbdcab23e46d4748ad9b34c45d24e2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3370143881619618759
+    second: Herny-0003 (1)_0
+  - first:
+      213: -7159864204557604628
+    second: Herny-0003 (1)_1
+  - first:
+      213: 3741727534690659857
+    second: Herny-0003 (1)_2
+  - first:
+      213: -6626171174161978302
+    second: Herny-0003 (1)_3
+  - first:
+      213: -4703663537204820747
+    second: Herny-0003 (1)_4
+  - first:
+      213: 2824910785712377019
+    second: Herny-0003 (1)_5
+  - first:
+      213: 1096530112571220386
+    second: Herny-0003 (1)_6
+  - first:
+      213: -897318819652791148
+    second: Herny-0003 (1)_7
+  - first:
+      213: 695405038838528180
+    second: Herny-0003 (1)_8
+  - first:
+      213: -1711854676449727152
+    second: Herny-0003 (1)_9
+  - first:
+      213: -84343021131565978
+    second: Herny-0003 (1)_10
+  - first:
+      213: -4249001690809631647
+    second: Herny-0003 (1)_11
+  - first:
+      213: -3707103804381144341
+    second: Herny-0003 (1)_12
+  - first:
+      213: 7676382405514351739
+    second: Herny-0003 (1)_13
+  - first:
+      213: -8012733042769855555
+    second: Herny-0003 (1)_14
+  - first:
+      213: 2915176113854275813
+    second: Herny-0003 (1)_15
+  - first:
+      213: -5542598702004644441
+    second: Herny-0003 (1)_16
+  - first:
+      213: 5319570251645849860
+    second: Herny-0003 (1)_17
+  - first:
+      213: -6398819387495957900
+    second: Herny-0003 (1)_18
+  - first:
+      213: 1971233766249324837
+    second: Herny-0003 (1)_19
+  - first:
+      213: -6517866007212635219
+    second: Herny-0003 (1)_20
+  - first:
+      213: 6923677968125519591
+    second: Herny-0003 (1)_21
+  - first:
+      213: 1239371891922104531
+    second: Herny-0003 (1)_22
+  - first:
+      213: -6305929756592089221
+    second: Herny-0003 (1)_23
+  - first:
+      213: -5237636019860631634
+    second: Herny-0003 (1)_24
+  - first:
+      213: 8617500244754147892
+    second: Herny-0003 (1)_25
+  - first:
+      213: -4632118565670670148
+    second: Herny-0003 (1)_26
+  - first:
+      213: -4105239897922689747
+    second: Herny-0003 (1)_27
+  - first:
+      213: 1462834631387847956
+    second: Herny-0003 (1)_28
+  - first:
+      213: -8225243934639872721
+    second: Herny-0003 (1)_29
+  - first:
+      213: -6153674105852355865
+    second: Herny-0003 (1)_30
+  - first:
+      213: 4997521207624079632
+    second: Herny-0003 (1)_31
+  - first:
+      213: -19209742068749434
+    second: Herny-0003 (1)_32
+  - first:
+      213: 2654577905429551270
+    second: Herny-0003 (1)_33
+  - first:
+      213: 6207384765339148442
+    second: Herny-0003 (1)_34
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 17
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Herny-0003 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 69
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cbb4e9210825ce20800000000000000
+      internalID: 3370143881619618759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 109
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce82f47c07d03ac90800000000000000
+      internalID: -7159864204557604628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 96
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ee8874e594de330800000000000000
+      internalID: 3741727534690659857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 114
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c642f8c6c1b04a0800000000000000
+      internalID: -6626171174161978302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 98
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f403f91fea39beb0800000000000000
+      internalID: -4703663537204820747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 63
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc4e808469143720800000000000000
+      internalID: 2824910785712377019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 88
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1a355e358a73f00800000000000000
+      internalID: 1096530112571220386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 69
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4949258a9451c83f0800000000000000
+      internalID: -897318819652791148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 88
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8bcfac23396a900800000000000000
+      internalID: 695405038838528180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 70
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d6f17dd354e38e0800000000000000
+      internalID: -1711854676449727152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 112
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6647b2a187a54def0800000000000000
+      internalID: -84343021131565978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 109
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cf14179738805c0800000000000000
+      internalID: -4249001690809631647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 110
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beadc522bb8bd8cc0800000000000000
+      internalID: -3707103804381144341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 68
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74ddb8602df78a60800000000000000
+      internalID: 7676382405514351739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 30
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbfaa930cd0dc090800000000000000
+      internalID: -8012733042769855555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 30
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0ecf3fa39c47820800000000000000
+      internalID: 2915176113854275813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5d872b8dbb413b0800000000000000
+      internalID: -5542598702004644441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_17
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 109
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4011617a5f8e2d940800000000000000
+      internalID: 5319570251645849860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_18
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 111
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47abb626ba3d237a0800000000000000
+      internalID: -6398819387495957900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_19
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 41
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521eb869aaa3b5b10800000000000000
+      internalID: 1971233766249324837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 21
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab4f7a4663eb85a0800000000000000
+      internalID: -6517866007212635219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_21
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 30
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 8, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6e155cd68d51060800000000000000
+      internalID: 6923677968125519591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_22
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 13
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0fe925b22233110800000000000000
+      internalID: 1239371891922104531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_23
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7753cfeb46dc78a0800000000000000
+      internalID: -6305929756592089221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_24
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 13
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 8, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf8a654acd2057b0800000000000000
+      internalID: -5237636019860631634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_25
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43aa96ca0d2879770800000000000000
+      internalID: 8617500244754147892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 11
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb035bfd4b867bfb0800000000000000
+      internalID: -4632118565670670148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_27
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 17
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25ae8630124707c0800000000000000
+      internalID: -4105239897922689747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_28
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 12
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41d1309c8580d4410800000000000000
+      internalID: 1462834631387847956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_29
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 36
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25aadc78301add80800000000000000
+      internalID: -8225243934639872721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_30
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea96291102c99aa0800000000000000
+      internalID: -6153674105852355865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_31
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 3
+        width: 25
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0191ae17f03ca5540800000000000000
+      internalID: 4997521207624079632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_32
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 36
+        width: 2
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68be3c367d0cbbff0800000000000000
+      internalID: -19209742068749434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_33
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 4
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a89ab95a84f6d420800000000000000
+      internalID: 2654577905429551270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 4
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9026325e8f052650800000000000000
+      internalID: 6207384765339148442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
