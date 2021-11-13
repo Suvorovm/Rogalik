@@ -12,7 +12,7 @@ namespace Roguelike.World
 
         private void Awake()
         {
-            ListUpdate();
+            FetchWorldObjects();
         }
 
         [NotNull]
@@ -36,7 +36,7 @@ namespace Roguelike.World
         public void AddGameObject(GameObject gO, [CanBeNull] GameObject container = null,
             bool worldPositionStays = false)
         {
-            ListUpdate();
+            FetchWorldObjects();
             Transform parentContainer = container == null ? transform : container.transform;
             Instantiate(gO).transform.SetParent(parentContainer, worldPositionStays);
         }
@@ -48,7 +48,7 @@ namespace Roguelike.World
 
         public void DestroyObject(string objectName)
         {
-            ListUpdate();
+            FetchWorldObjects();
             Destroy(GetParentObjectByName(objectName));
         }
 
@@ -57,7 +57,7 @@ namespace Roguelike.World
             get { return _gameWorldObjects; }
         }
 
-        public void ListUpdate()
+        public void FetchWorldObjects()
         {
             _gameWorldObjects = gameObject.GetComponentsInChildren<Transform>(true).ToList().Select(t => t.gameObject)
                 .ToList();
