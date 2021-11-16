@@ -50,6 +50,7 @@ namespace Roguelike.World
         {
             FetchWorldObjects();
             Destroy(GetParentObjectByName(objectName));
+            Debug.Log("Destroyed");
         }
 
         public List<GameObject> GameWorldObjects
