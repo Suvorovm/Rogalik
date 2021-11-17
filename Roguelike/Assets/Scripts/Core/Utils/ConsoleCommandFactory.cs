@@ -23,6 +23,14 @@ namespace Core.Utils
             Debug.Log(healthService.ToString());
         }
 
+        [ConsoleMethod("damagePlayer", "Наносит урон")]
+        [UsedImplicitly]
+        public static void DecrHealth(int damage)
+        {
+            HealthService healthService = GameApplication.RequireService<HealthService>();
+            healthService.DecreaseHealth(damage);
+        }
+
         [ConsoleMethod("loadLevel", "Загружает уровень")]
         [UsedImplicitly]
         public static void LoadLevelConsole(int levelNum)
