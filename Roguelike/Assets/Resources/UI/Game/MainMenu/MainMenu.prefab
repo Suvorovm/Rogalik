@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2248549404253066349}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 0.000015259}
-  m_SizeDelta: {x: 869, y: 449}
+  m_AnchoredPosition: {x: 0.000030518, y: 0.000015259}
+  m_SizeDelta: {x: 1012, y: 449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2248549404253066350
 CanvasRenderer:
