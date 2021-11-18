@@ -29,4 +29,5 @@ public class HealObject : MonoBehaviour
             Destroy(_gameObject);
         }
     }
+    
 }
