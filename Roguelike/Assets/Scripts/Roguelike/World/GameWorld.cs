@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace Roguelike.World
 {
     public class GameWorld : MonoBehaviour
     {
+        private static GameWorld _gameWorldInstance;
+
         private List<GameObject> _gameWorldObjects;
 
         private void Awake()
@@ -69,6 +72,20 @@ namespace Roguelike.World
             _gameWorldObjects = gameObject.GetComponentsInChildren<Transform>(true).ToList().Select(t => t.gameObject)
                 .ToList();
             Debug.Log(_gameWorldObjects);
+        }
+
+
+        public static GameWorld GameWorldInstance
+        {
+            get
+            {
+                if (_gameWorldInstance == null)
+                {
+                    _gameWorldInstance = GameApplication.RootAppObject.GetComponentInChildren<GameWorld>();
+                }
+
+                return _gameWorldInstance;
+            }
         }
     }
 }

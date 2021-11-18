@@ -7,7 +7,7 @@ namespace Core
     public static class GameApplication
     {
         private const string MAIN_OBJECT_NAME = "GameApplication";
-        private static GameObject _mainObject;
+        private static GameObject _rootApplicationObject;
 
         public static void Restart()
         {
@@ -16,14 +16,24 @@ namespace Core
 
         public static T RequireService<T>()
         {
-            if (_mainObject == null) {
-                _mainObject = GameObject.Find(MAIN_OBJECT_NAME);
-            }
-            T component = _mainObject.GetComponent<T>();
+
+            T component = RootAppObject.GetComponent<T>();
             if (component == null) {
                 throw new ArgumentException("There is no component " + typeof(T));
             }
             return component;
+        }
+
+        public static GameObject RootAppObject
+        {
+            get
+            {
+                if (_rootApplicationObject == null) {
+                    _rootApplicationObject = GameObject.Find(MAIN_OBJECT_NAME);
+                }
+
+                return _rootApplicationObject;
+            }
         }
     }
 }
