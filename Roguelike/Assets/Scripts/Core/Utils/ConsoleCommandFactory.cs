@@ -1,5 +1,6 @@
 ﻿using IngameDebugConsole;
 using JetBrains.Annotations;
+using Roguelike.World;
 using Roguelike.World.Service;
 using UnityEngine;
 
@@ -37,6 +38,15 @@ namespace Core.Utils
         public static void RestartTheGame()
         {
             GameApplication.Restart();
+        }
+
+        [ConsoleMethod("testStaticGameWorld", "test Game World")]
+        [UsedImplicitly]
+        public static void TestGameWorldApi()
+        {
+            GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
+            GameObject testObject = gameWorldInstance.RequaireObjectByName("TestObject");
+            Debug.Log($"Is test object null {testObject == null}");
         }
     }
 }
