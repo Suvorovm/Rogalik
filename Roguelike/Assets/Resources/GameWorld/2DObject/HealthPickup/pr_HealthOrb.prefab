@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2891544607947241389}
   - component: {fileID: 2220966972594110260}
   m_Layer: 0
-  m_Name: HealthOrb
+  m_Name: pr_HealthOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

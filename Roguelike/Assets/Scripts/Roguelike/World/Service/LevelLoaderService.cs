@@ -23,7 +23,7 @@ namespace Roguelike.World.Service
 
         public void LoadNextLevel(int nextLevelnum = 0)
         {
-            _gameWorld.DestroyObject(CurentLevelName);
+            _gameWorld.DestroyObjectByName(CurentLevelName);
 
 
             if (nextLevelnum == 0)

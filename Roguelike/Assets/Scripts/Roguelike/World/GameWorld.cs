@@ -46,11 +46,17 @@ namespace Roguelike.World
             AddGameObject(RequaireObjectByName(reqObject), GetParentObjectByName(parentObject));
         }
 
-        public void DestroyObject(string objectName)
+        public void DestroyObjectByName(string objectName)
         {
             FetchWorldObjects();
             Destroy(GetParentObjectByName(objectName));
             Debug.Log("Destroyed");
+        }
+
+        public void DestroyObject(GameObject ngameObject)
+        {
+            Destroy(ngameObject);
+            FetchWorldObjects();
         }
 
         public List<GameObject> GameWorldObjects
