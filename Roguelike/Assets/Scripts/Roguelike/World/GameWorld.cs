@@ -56,11 +56,6 @@ namespace Roguelike.World
             Debug.Log("Destroyed");
         }
 
-        public void DestroyObject(GameObject ngameObject)
-        {
-            Destroy(ngameObject);
-            FetchWorldObjects();
-        }
 
         public List<GameObject> GameWorldObjects
         {

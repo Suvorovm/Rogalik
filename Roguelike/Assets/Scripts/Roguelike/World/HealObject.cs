@@ -17,6 +17,7 @@ public class HealObject : MonoBehaviour
     private void Awake()
     {
         _healthService = GameApplication.RequireService<HealthService>();
+        _gameWorld = GameWorld.GameWorldInstance;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
