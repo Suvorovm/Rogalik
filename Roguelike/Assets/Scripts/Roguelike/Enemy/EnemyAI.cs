@@ -3,41 +3,43 @@ using System.Collections.Generic;
 using Core;
 using UnityEngine;
 using Pathfinding;
+using Roguelike.World;
 using Roguelike.World.Service;
 
 public class EnemyAI: MonoBehaviour
 {
-    private Transform target;
-    [SerializeField] private float speed=15f;
-    private float nextWaypointD = 2f;
+    private Transform _target;
+    [SerializeField] private float _speed=15f;
+    private float _nextWaypointD = 2f;
     private Path path;
-    private int currentWaypoint=0;
-    private bool reachedEndofPath=false;
-    private Seeker seeker;
-    private Rigidbody2D rb;
-    [SerializeField]private float attackDistance=1.5f;
-    private const float UPDATE_TIME=0.5f;
-    private float next_Update_Time = 0.0f;
-    private float attackTimer;
-    [SerializeField]private float cooldown=2.5f;
-    [SerializeField]private float visible = 10f;
-    [SerializeField]private float enemyDamage = 10;
-    
-    
-    // Start is called before the first frame update
+    private int _currentWaypoint=0;
+    private bool _reachedEndofPath=false;
+    private Seeker _seeker;
+    private Rigidbody2D _rb;
+    [SerializeField]private float _attackDistance=1.5f;
+    private const float _UPDATE_TIME=0.5f;
+    private float _next_Update_Time = 0.0f;
+    private float _attackTimer;
+    [SerializeField]private float _cooldown=2.5f;
+    [SerializeField]private float _visible = 10f;
+    [SerializeField]private float _enemyDamage = 10;
+    public static void TestGameWorldApi()
+    {
+        GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
+        GameObject _target = gameWorldInstance.RequaireObjectByName("Player");
+        Debug.Log("&Is test object null {Player==null}");
+    }
     void Start()
     {
-        
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
+        _seeker = GetComponent<Seeker>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void UpdatePath()
     {
         if (IsUpdateTimeReached()==true)
         {
-            if(seeker.IsDone()) seeker.StartPath(rb.position, target.position, OnPathComplete);
+            if(_seeker.IsDone()) _seeker.StartPath(_rb.position, _target.position, OnPathComplete);
         }
         else
         {
@@ -49,7 +51,7 @@ public class EnemyAI: MonoBehaviour
         if (!p.error)
         {
             path = p;
-            currentWaypoint = 0;
+            _currentWaypoint = 0;
         }  
     }
 
@@ -60,54 +62,54 @@ public class EnemyAI: MonoBehaviour
         if (path == null) {
             return;
         }
-        if (currentWaypoint >= path.vectorPath.Count)
+        if (_currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndofPath =true;
+            _reachedEndofPath =true;
             return;
         }
         else
         {
-            reachedEndofPath = false;
+            _reachedEndofPath = false;
         }
-        float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        float distanceToTarget = Vector3.Distance(transform.position, _target.transform.position);
         AttackTimer();
-        if (distanceToTarget < visible && distanceToTarget>attackDistance)
+        if (distanceToTarget < _visible && distanceToTarget>_attackDistance)
         {
             
             Walk();
             
         }
 
-        if (distanceToTarget < visible && distanceToTarget <= attackDistance && attackTimer==0)
+        if (distanceToTarget < _visible && distanceToTarget <= _attackDistance && _attackTimer==0)
         {
             Attack();
-            attackTimer = cooldown;
+            _attackTimer = _cooldown;
         }
     }
     private void Walk()
     {
-       Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
-               Vector2 force = direction * speed * Time.deltaTime;
-               rb.AddForce(force);
-               float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-               if (distance < nextWaypointD)
+       Vector2 direction = ((Vector2) path.vectorPath[_currentWaypoint] - _rb.position).normalized;
+               Vector2 force = direction * _speed * Time.deltaTime;
+               _rb.AddForce(force);
+               float distance = Vector2.Distance(_rb.position, path.vectorPath[_currentWaypoint]);
+               if (distance < _nextWaypointD)
                {
-                   currentWaypoint++;
+                   _currentWaypoint++;
                } 
     }
 
     private void Attack()
     {
         HealthService healthService = GameApplication.RequireService<HealthService>();
-        healthService.DecreaseHealth(enemyDamage);
+        healthService.DecreaseHealth(_enemyDamage);
         Debug.Log("Attack"); 
     }
 
     public bool IsUpdateTimeReached()
     {
-        if (Time.time > next_Update_Time)
+        if (Time.time > _next_Update_Time)
         {
-            next_Update_Time += UPDATE_TIME;
+            _next_Update_Time += _UPDATE_TIME;
             return true;
         }
         else
@@ -117,11 +119,11 @@ public class EnemyAI: MonoBehaviour
     }
     private void AttackTimer()
     {
-        if (attackTimer > 0) {
-            attackTimer -= Time.deltaTime;
+        if (_attackTimer > 0) {
+            _attackTimer -= Time.deltaTime;
         }
-        if (attackTimer <= 0) {
-            attackTimer = 0;
+        if (_attackTimer <= 0) {
+            _attackTimer = 0;
         }
     }
 }
