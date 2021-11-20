@@ -1,7 +1,10 @@
 ﻿using IngameDebugConsole;
 using JetBrains.Annotations;
+using Roguelike.Settings.Repository;
+using Roguelike.Settings.Service;
 using Roguelike.World;
 using Roguelike.World.Service;
+using UnityEditor;
 using UnityEngine;
 
 namespace Core.Utils
@@ -55,6 +58,39 @@ namespace Core.Utils
             GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
             GameObject testObject = gameWorldInstance.RequaireObjectByName("TestObject");
             Debug.Log($"Is test object null {testObject == null}");
+        }
+        
+        
+        [ConsoleMethod("turnOnMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOnMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOnMusic();
+        }
+        
+        [ConsoleMethod("turnOffMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOffMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOffMusic();
+        }
+        
+        [ConsoleMethod("isMusicTurnOn", "test Game World")]
+        [UsedImplicitly]
+        public static void IsMusicTurnOn()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            Debug.Log($"PlayerSettingModel.MusicOn = {playerSettingsService.IsMusicOn}");
+        }
+
+        [ConsoleMethod("removeSettings", "test Game World")]
+        [UsedImplicitly]
+        public static void RemoveSettingsRepository()
+        {
+            PlayerSettingsRepository playerSettingsService = GameApplication.RequireService<PlayerSettingsRepository>();
+            playerSettingsService.Clear();
         }
     }
 }
