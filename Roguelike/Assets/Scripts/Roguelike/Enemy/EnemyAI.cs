@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using Roguelike.World.Service;
 using Core;
 using UnityEngine;
 using Pathfinding;
-using Roguelike.World;
-using Roguelike.World.Service;
-
 public class EnemyAI: MonoBehaviour
 {
     private Transform _target;
@@ -23,18 +19,13 @@ public class EnemyAI: MonoBehaviour
     [SerializeField]private float _cooldown=2.5f;
     [SerializeField]private float _visible = 10f;
     [SerializeField]private float _enemyDamage = 10;
-    public static void TestGameWorldApi()
-    {
-        GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
-        GameObject _target = gameWorldInstance.RequaireObjectByName("Player");
-        Debug.Log("&Is test object null {Player==null}");
-    }
     void Start()
     {
+        _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
     }
-
+    
     private void UpdatePath()
     {
         if (IsUpdateTimeReached()==true)
