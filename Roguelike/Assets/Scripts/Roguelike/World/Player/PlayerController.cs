@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DG.Tweening;
 using Roguelike.World.UI;
 using UnityEngine;
-using DG.Tweening;
 
-namespace Roguelike.World.Game_Object_Controllers
+namespace Roguelike.World.Player
 {
     public class PlayerController : MonoBehaviour
     {

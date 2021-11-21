@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Roguelike.Components
+namespace Roguelike.World.UI.Components
 {
     public class HealthBar : MonoBehaviour
     {
