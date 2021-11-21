@@ -4,21 +4,21 @@ using UnityEngine;
 using Pathfinding;
 public class EnemyAI: MonoBehaviour
 {
-    private Transform _target;
-    [SerializeField] private float _speed=15f;
+    [SerializeField]private float _cooldown=2.5f;
+    [SerializeField]private float _visible = 10f;
+    [SerializeField]private float _enemyDamage = 10; 
+    [SerializeField]private float _speed = 15f;
+    [SerializeField]private float _attackDistance=1.5f;
     private float _nextWaypointD = 2f;
     private Path path;
     private int _currentWaypoint=0;
     private bool _reachedEndofPath=false;
     private Seeker _seeker;
     private Rigidbody2D _rb;
-    [SerializeField]private float _attackDistance=1.5f;
+    private Transform _target;
     private const float _UPDATE_TIME=0.5f;
     private float _next_Update_Time = 0.0f;
     private float _attackTimer;
-    [SerializeField]private float _cooldown=2.5f;
-    [SerializeField]private float _visible = 10f;
-    [SerializeField]private float _enemyDamage = 10;
     void Start()
     {
         _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
