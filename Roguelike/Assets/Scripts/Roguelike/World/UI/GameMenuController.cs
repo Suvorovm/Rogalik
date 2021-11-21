@@ -1,4 +1,6 @@
 ﻿using Core;
+using Core.UI;
+using Core.UI.Model;
 using Roguelike.Components;
 using Roguelike.World.Service;
 using UnityEngine;
@@ -6,8 +8,9 @@ using UnityEngine.UI;
 
 namespace Roguelike.World.UI
 {
-    public class GameMenuController : MonoBehaviour
+    public class GameMenuController : MonoBehaviour , IScreen
     {
+        public const string SCREEN_PATH = "UI/Game/Overlay/pfGameOverlay";
         [SerializeField]
         private HealthBar _healthBar;
         [SerializeField]
@@ -16,15 +19,17 @@ namespace Roguelike.World.UI
         private Button _attackButton;
         private PlayerAttackService _playerAttackService;
         private GameMasterService _gameMasterService;
-
-        private void OnEnable()
+        public void Configure(IScreenModel screenModel)
+        {
+            
+        }
+        private void Awake()
         {
             HealthService.OnHealthUpdate += UpdateHealthBar;
             _pauseButton.onClick.AddListener(OnPauseButtonClick);
             _gameMasterService = GameApplication.RequireService<GameMasterService>();
             _playerAttackService = GameApplication.RequireService<PlayerAttackService>();
             _attackButton.onClick.AddListener(OnAttackButtonClick);
-
         }
 
         private void OnAttackButtonClick()
@@ -46,5 +51,8 @@ namespace Roguelike.World.UI
         {
             HealthService.OnHealthUpdate -= UpdateHealthBar;
         }
+
+
+
     }
 }

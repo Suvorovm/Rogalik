@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6128147118122529394}
   - component: {fileID: 7417065791637842785}
   - component: {fileID: 492817742061206241}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861705765131779292}
-  m_Layer: 0
+  - component: {fileID: 1688591053452413972}
+  m_Layer: 5
   m_Name: pfGameOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +172,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1688591053452413972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314384160116948902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6e3a3e11de49c3b97c139fe8611d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 8766738640610489778}
+  _pauseButton: {fileID: 6128147118122529394}
+  _attackButton: {fileID: 6070494847741470491}
 --- !u!1001 &6540790767478653957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +302,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4065834758735175060, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774119685903055359, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050941453874943593, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7173536425885489128, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -314,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pfPlayerControls
       objectReference: {fileID: 0}
+    - target: {fileID: 8181572949254360267, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
 --- !u!224 &9091324431639144893 stripped
@@ -321,6 +353,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2661435976438918584, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
   m_PrefabInstance: {fileID: 6540790767478653957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6070494847741470491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1079514169176253214, guid: 456e656a82304a54d95c56b2a00258e3, type: 3}
+  m_PrefabInstance: {fileID: 6540790767478653957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8114100479087895789
 PrefabInstance:
   m_ObjectHideFlags: 0
