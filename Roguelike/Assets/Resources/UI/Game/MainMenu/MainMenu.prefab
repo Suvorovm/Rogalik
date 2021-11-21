@@ -364,7 +364,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1394006190, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
+      - m_Target: {fileID: 6963875139068565944, guid: 7788d6d553ca3024abe0f82b0cb1b3be, type: 3}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartButton
         m_Mode: 1
