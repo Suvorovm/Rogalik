@@ -100,18 +100,18 @@ namespace Core.UI
             RemoveDialog(dialogData);
         }
 
-        [PublicAPI]
-        public void HideScreen()
-        {
-            Destroy(_screenContainer);
-            _screenContainer = null;
-        }
 
         [PublicAPI]
         public bool HasDialog<T>() where T : MonoBehaviour, IDialog
         {
             DialogData dialog = GetDialogData<T>();
             return dialog != null;
+        }
+        [PublicAPI]
+        public void HideScreen()
+        {
+            Destroy(_screenContainer);
+            _screenContainer = null;
         }
 
         [PublicAPI]
