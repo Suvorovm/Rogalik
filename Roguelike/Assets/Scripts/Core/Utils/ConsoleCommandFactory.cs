@@ -1,5 +1,7 @@
-﻿using IngameDebugConsole;
+﻿using Core.UI;
+using IngameDebugConsole;
 using JetBrains.Annotations;
+using Roguelike.UI;
 using Roguelike.World;
 using Roguelike.World.Service;
 using UnityEngine;
@@ -55,6 +57,24 @@ namespace Core.Utils
             GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
             GameObject testObject = gameWorldInstance.RequaireObjectByName("TestObject");
             Debug.Log($"Is test object null {testObject == null}");
+        }
+        
+        
+        [ConsoleMethod("showAlert", "Showed Alert dialog")]
+        [UsedImplicitly]
+        public static void ShowAlertDialog()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowDialog<AlertDialog>(AlertDialog.DIALOG_PATH);
+        }
+        
+        
+        [ConsoleMethod("showError", "Showed Error dialog")]
+        [UsedImplicitly]
+        public static void ShowErrorDialog()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowDialog<ErrorDialog>(ErrorDialog.DIALOG_PATH);
         }
     }
 }
