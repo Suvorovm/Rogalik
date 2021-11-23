@@ -35,5 +35,17 @@ namespace Core.Utils
                 Object.Destroy(allChild[i]);
             }
         }
+
+        public static T GetOrCreateComponent<T>(this GameObject gameObject)
+            where T : Component
+        {
+            T component = gameObject.GetComponent<T>();
+            if (component == null)
+            {
+                return gameObject.AddComponent<T>();
+            }
+
+            return component;
+        }
     }
 }

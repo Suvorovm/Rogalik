@@ -12,15 +12,15 @@ namespace Core.UI
     {
         private const string DIALOG_CONTAINER = "DialogContainer";
         private const string SCREEN_CONTAINER = "ScreenContainer";
+        private readonly List<DialogData> _dialogs = new List<DialogData>();
 
         private GameObject _screenContainer;
         private GameObject _dialogContainer;
 
-        private List<DialogData> _dialogs = new List<DialogData>();
         private DialogData _currentDialog;
         private MonoBehaviour _currentScreen;
         private int _maxSortingOrder;
-        
+
         [PublicAPI]
         public void Init()
         {
@@ -28,11 +28,10 @@ namespace Core.UI
         }
 
         [PublicAPI]
-
         public T ShowScreen<T>(string prefabPath, [CanBeNull] IScreenModel model = null)
             where T : MonoBehaviour, IScreen
         {
-            T screenMonoBehaviour = InstantiateUIPrefab<T>(prefabPath);
+            T screenMonoBehaviour = InstantiateUI<T>(prefabPath);
 
             screenMonoBehaviour.Configure(model);
 
@@ -44,41 +43,25 @@ namespace Core.UI
         }
 
         [PublicAPI]
-
         public T ShowDialog<T>(string prefabPath, [CanBeNull] IDialogModel model = null)
             where T : MonoBehaviour, IDialog
         {
             DialogData existingDialog = GetDialogData<T>();
             if (existingDialog != null)
             {
-                PushUpExistingDialog<T>(existingDialog);
+                PushUpExistingDialog(existingDialog);
                 return existingDialog.MonoBehaviour.GetComponent<T>();
             }
 
-            T dialog = InstantiateUIPrefab<T>(prefabPath);
-            dialog.Configure(model);
-
-            Canvas canvas = dialog.GetComponent<Canvas>();
-            if (canvas == null)
-            {
-                canvas = dialog.gameObject.AddComponent<Canvas>();
-            }
-
-            dialog.gameObject.AddComponent<GraphicRaycaster>();
-            _maxSortingOrder++;
-            canvas.overrideSorting = true;
-            canvas.sortingOrder = _maxSortingOrder;
-            DialogData dialogData = new DialogData()
-            {
-                Order = _maxSortingOrder,
-                MonoBehaviour = dialog,
-                Canvas = canvas
-            };
-            _dialogs.Add(dialogData);
-            _currentDialog = dialogData;
-            dialog.gameObject.transform.SetParent(_dialogContainer.transform, false);
+            T dialog = InstantiateUI<T>(prefabPath);
+            DialogData configuredDialog = ConfigureDialog(dialog, model);
+            
+            _dialogs.Add(configuredDialog);
+            _currentDialog = configuredDialog;
+            
             return dialog;
         }
+
         [PublicAPI]
         public void HideDialog(GameObject dialogToHide)
         {
@@ -99,12 +82,13 @@ namespace Core.UI
             {
                 Destroy(_dialogs[i].MonoBehaviour.gameObject);
             }
+
             _dialogs.Clear();
         }
+
         [PublicAPI]
         public void HideDialog<T>()
             where T : MonoBehaviour, IDialog
-
         {
             DialogData dialogData = GetDialogData<T>();
             if (dialogData == null)
@@ -115,11 +99,25 @@ namespace Core.UI
 
             RemoveDialog(dialogData);
         }
+
+        [PublicAPI]
+        public void HideScreen()
+        {
+            Destroy(_screenContainer);
+            _screenContainer = null;
+        }
+
         [PublicAPI]
         public bool HasDialog<T>() where T : MonoBehaviour, IDialog
         {
             DialogData dialog = GetDialogData<T>();
             return dialog != null;
+        }
+
+        [PublicAPI]
+        private IScreen GetCurrentScreen()
+        {
+            return _currentScreen == null ? null : _currentScreen.GetComponent<IScreen>();
         }
 
         private void ValidateUIStruct()
@@ -130,7 +128,7 @@ namespace Core.UI
             Predications.CheckNotNull(_screenContainer);
         }
 
-        private T InstantiateUIPrefab<T>(string prefabPath)
+        private T InstantiateUI<T>(string prefabPath)
             where T : MonoBehaviour
         {
             GameObject prefab = Resources.Load<GameObject>(prefabPath);
@@ -153,7 +151,26 @@ namespace Core.UI
             return dialog;
         }
 
-        private void PushUpExistingDialog<T>(DialogData existingDialog) where T : MonoBehaviour, IDialog
+        private DialogData ConfigureDialog<T>(T dialog, [CanBeNull] IDialogModel model = null)
+            where T : MonoBehaviour, IDialog
+        {
+            dialog.Configure(model);
+            Canvas canvas = dialog.gameObject.GetOrCreateComponent<Canvas>();
+            dialog.gameObject.GetOrCreateComponent<GraphicRaycaster>();
+            dialog.gameObject.transform.SetParent(_dialogContainer.transform, false);
+            _maxSortingOrder++;
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = _maxSortingOrder;
+            DialogData dialogData = new DialogData()
+            {
+                Order = _maxSortingOrder,
+                MonoBehaviour = dialog,
+                Canvas = canvas
+            };
+            return dialogData;
+        }
+
+        private void PushUpExistingDialog(DialogData existingDialog)
         {
             for (int i = 0; i < _dialogs.Count; i++)
             {
