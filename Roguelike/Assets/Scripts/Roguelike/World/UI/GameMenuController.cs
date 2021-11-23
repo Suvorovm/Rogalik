@@ -1,8 +1,9 @@
 ﻿using Core;
 using Core.UI;
 using Core.UI.Model;
-using Roguelike.Components;
+using Roguelike.World.Player;
 using Roguelike.World.Service;
+using Roguelike.World.UI.Components;
 using UnityEngine;
 using UnityEngine.UI;
 

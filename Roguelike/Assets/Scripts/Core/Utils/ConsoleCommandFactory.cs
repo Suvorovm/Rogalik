@@ -1,7 +1,5 @@
-﻿using Core.UI;
-using IngameDebugConsole;
+﻿using IngameDebugConsole;
 using JetBrains.Annotations;
-using Roguelike.UI;
 using Roguelike.World;
 using Roguelike.World.Service;
 using UnityEngine;
@@ -75,6 +73,39 @@ namespace Core.Utils
         {
             UIService uiService = GameApplication.RequireService<UIService>();
             uiService.ShowDialog<ErrorDialog>(ErrorDialog.DIALOG_PATH);
+        }
+        
+        
+        [ConsoleMethod("turnOnMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOnMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOnMusic();
+        }
+        
+        [ConsoleMethod("turnOffMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOffMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOffMusic();
+        }
+        
+        [ConsoleMethod("isMusicTurnOn", "test Game World")]
+        [UsedImplicitly]
+        public static void IsMusicTurnOn()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            Debug.Log($"PlayerSettingModel.MusicOn = {playerSettingsService.IsMusicOn}");
+        }
+
+        [ConsoleMethod("removeSettings", "test Game World")]
+        [UsedImplicitly]
+        public static void RemoveSettingsRepository()
+        {
+            PlayerSettingsRepository playerSettingsService = GameApplication.RequireService<PlayerSettingsRepository>();
+            playerSettingsService.Clear();
         }
     }
 }
