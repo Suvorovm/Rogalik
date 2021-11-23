@@ -12,11 +12,14 @@ namespace Roguelike.World
     {
         private static GameWorld _gameWorldInstance;
 
-        private List<GameObject> _gameWorldObjects;
+        private List<GameObject> _gameWorldObjects = new List<GameObject>();
+
+        public event Action OnInitialized;
 
         private void Awake()
         {
             FetchWorldObjects();
+            OnInitialized?.Invoke();
         }
 
         [NotNull]
@@ -29,6 +32,18 @@ namespace Roguelike.World
             }
 
             return go;
+        }
+
+        [CanBeNull]
+        public T GetComponentInWorld<T>()
+        {
+            T component = _gameWorldObjects.Select(go =>
+                {
+                    T component = go.GetComponent<T>();
+                    return component;
+                })
+                .FirstOrDefault();
+            return component;
         }
 
         [CanBeNull]
