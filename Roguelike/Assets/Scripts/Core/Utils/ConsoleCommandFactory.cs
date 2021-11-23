@@ -1,5 +1,9 @@
-﻿using IngameDebugConsole;
+﻿using Core.UI;
+using IngameDebugConsole;
 using JetBrains.Annotations;
+using Roguelike.Settings.Repository;
+using Roguelike.Settings.Service;
+using Roguelike.UI;
 using Roguelike.World;
 using Roguelike.World.Service;
 using UnityEngine;

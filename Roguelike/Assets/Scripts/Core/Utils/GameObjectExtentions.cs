@@ -10,16 +10,16 @@ namespace Core.Utils
         [CanBeNull]
         public static GameObject GetChildByName(this GameObject gameObject, string name)
         {
-            List<GameObject> allChild = new List<GameObject>();
-            foreach (Transform childTransform in gameObject.transform.GetComponentsInChildren<Transform>())
-            {
-                allChild.Add(childTransform.gameObject);
-            }
-
+            List<GameObject> allChild = gameObject.GetAllChildren();
             return allChild.FirstOrDefault(g => g.name.Equals(name));
         }
-
-        public static void RemoveAllChild(this GameObject gameObject)
+        
+        /// <summary>
+        /// Returns all children of GO. May be expensive if GameObject has a lot of children. Invoke iteration by Transform
+        /// </summary>
+        /// <param name="gameObject"> Source object</param>
+        /// <returns></returns>
+        public static List<GameObject> GetAllChildren(this GameObject gameObject)
         {
             List<GameObject> allChild = new List<GameObject>();
             foreach (Transform childTransform in gameObject.transform.GetComponentsInChildren<Transform>())
@@ -29,7 +29,13 @@ namespace Core.Utils
                     allChild.Add(childTransform.gameObject);
                 }
             }
+            return allChild;
+        }
 
+        
+        public static void RemoveAllChild(this GameObject gameObject)
+        {
+            List<GameObject> allChild = gameObject.GetAllChildren();
             for (var i = 0; i < allChild.Count; i++)
             {
                 Object.Destroy(allChild[i]);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using Core.Utils;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -64,8 +65,7 @@ namespace Roguelike.World
 
         public void FetchWorldObjects()
         {
-            _gameWorldObjects = gameObject.GetComponentsInChildren<Transform>(true).ToList().Select(t => t.gameObject)
-                .ToList();
+            _gameWorldObjects = gameObject.GetAllChildren();
             Debug.Log(_gameWorldObjects);
         }
 
