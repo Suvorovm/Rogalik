@@ -6,6 +6,7 @@ using Roguelike.Settings.Service;
 using Roguelike.UI;
 using Roguelike.World;
 using Roguelike.World.Service;
+using Roguelike.World.UI;
 using UnityEngine;
 
 namespace Core.Utils
@@ -110,6 +111,14 @@ namespace Core.Utils
         {
             PlayerSettingsRepository playerSettingsService = GameApplication.RequireService<PlayerSettingsRepository>();
             playerSettingsService.Clear();
+        }
+
+        [ConsoleMethod("showMainScreen", "Show main Game screan")]
+        [UsedImplicitly]
+        public static void ShowMainScreen()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         }
     }
 }

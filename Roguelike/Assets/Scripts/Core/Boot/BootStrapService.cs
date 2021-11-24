@@ -16,7 +16,7 @@ namespace Core.Boot
 
         private void LoadGameScreen()
         {
-            _uiService.ShowScreen<GameMenuController>(GameMenuController.SCREEN_PATH);
+            _uiService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         }
     }
 }

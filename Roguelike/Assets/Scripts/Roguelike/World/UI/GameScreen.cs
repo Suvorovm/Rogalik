@@ -9,9 +9,9 @@ using UnityEngine.UI;
 
 namespace Roguelike.World.UI
 {
-    public class GameMenuController : MonoBehaviour, IScreen
+    public class GameScreen : MonoBehaviour, IScreen
     {
-        public const string SCREEN_PATH = "UI/Game/Overlay/pfGameOverlay";
+        public const string SCREEN_PATH = "UI/Game/Overlay/pfGameScreen";
         [SerializeField] private HealthBar _healthBar;
         [SerializeField] private Button _pauseButton;
         [SerializeField] private Button _attackButton;

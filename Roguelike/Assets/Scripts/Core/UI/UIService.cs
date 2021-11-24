@@ -33,14 +33,14 @@ namespace Core.UI
         {
             T screenMonoBehaviour = InstantiateUI<T>(prefabPath);
 
-            screenMonoBehaviour.Configure(model);
-
-            _screenContainer.gameObject.RemoveAllChild();
-            _dialogContainer.gameObject.RemoveAllChild();
-            _currentScreen = screenMonoBehaviour;
+            ClearScreenAndDialogs();
             screenMonoBehaviour.transform.SetParent(_screenContainer.transform, false);
+
+            screenMonoBehaviour.Configure(model);
+            _currentScreen = screenMonoBehaviour;
             return screenMonoBehaviour;
         }
+
 
         [PublicAPI]
         public T ShowDialog<T>(string prefabPath, [CanBeNull] IDialogModel model = null)
@@ -55,10 +55,10 @@ namespace Core.UI
 
             T dialog = InstantiateUI<T>(prefabPath);
             DialogData configuredDialog = ConfigureDialog(dialog, model);
-            
+
             _dialogs.Add(configuredDialog);
             _currentDialog = configuredDialog;
-            
+
             return dialog;
         }
 
@@ -83,6 +83,8 @@ namespace Core.UI
                 Destroy(_dialogs[i].MonoBehaviour.gameObject);
             }
 
+            _currentDialog = null;
+            _maxSortingOrder = 0;
             _dialogs.Clear();
         }
 
@@ -107,11 +109,11 @@ namespace Core.UI
             DialogData dialog = GetDialogData<T>();
             return dialog != null;
         }
+
         [PublicAPI]
         public void HideScreen()
         {
-            Destroy(_screenContainer);
-            _screenContainer = null;
+            _screenContainer.gameObject.RemoveAllChild();
         }
 
         [PublicAPI]
@@ -168,6 +170,15 @@ namespace Core.UI
                 Canvas = canvas
             };
             return dialogData;
+        }
+
+        private void ClearScreenAndDialogs()
+        {
+            _screenContainer.gameObject.RemoveAllChild();
+            _dialogContainer.gameObject.RemoveAllChild();
+            _currentDialog = null;
+            _maxSortingOrder = 0;
+            _dialogs.Clear();
         }
 
         private void PushUpExistingDialog(DialogData existingDialog)
