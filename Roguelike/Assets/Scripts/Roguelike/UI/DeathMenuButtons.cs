@@ -11,6 +11,7 @@ namespace Roguelike.UI
         [SerializeField]
         private Button _mainMenuButton;
 
+
         private void Awake()
         {
             _restartButton.onClick.AddListener(Restart);

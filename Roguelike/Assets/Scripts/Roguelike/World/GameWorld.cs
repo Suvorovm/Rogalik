@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core;
+using Core.Utils;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -8,11 +10,16 @@ namespace Roguelike.World
 {
     public class GameWorld : MonoBehaviour
     {
-        private List<GameObject> _gameWorldObjects;
+        private static GameWorld _gameWorldInstance;
+
+        private List<GameObject> _gameWorldObjects = new List<GameObject>();
+
+        public event Action OnInitialized;
 
         private void Awake()
         {
             FetchWorldObjects();
+            OnInitialized?.Invoke();
         }
 
         [NotNull]
@@ -25,6 +32,18 @@ namespace Roguelike.World
             }
 
             return go;
+        }
+
+        [CanBeNull]
+        public T GetComponentInWorld<T>()
+        {
+            T component = _gameWorldObjects.Select(go =>
+                {
+                    T component = go.GetComponent<T>();
+                    return component;
+                })
+                .FirstOrDefault();
+            return component;
         }
 
         [CanBeNull]
@@ -46,12 +65,13 @@ namespace Roguelike.World
             AddGameObject(RequaireObjectByName(reqObject), GetParentObjectByName(parentObject));
         }
 
-        public void DestroyObject(string objectName)
+        public void DestroyObjectByName(string objectName)
         {
             FetchWorldObjects();
             Destroy(GetParentObjectByName(objectName));
             Debug.Log("Destroyed");
         }
+
 
         public List<GameObject> GameWorldObjects
         {
@@ -60,9 +80,22 @@ namespace Roguelike.World
 
         public void FetchWorldObjects()
         {
-            _gameWorldObjects = gameObject.GetComponentsInChildren<Transform>(true).ToList().Select(t => t.gameObject)
-                .ToList();
+            _gameWorldObjects = gameObject.GetAllChildren();
             Debug.Log(_gameWorldObjects);
+        }
+
+
+        public static GameWorld GameWorldInstance
+        {
+            get
+            {
+                if (_gameWorldInstance == null)
+                {
+                    _gameWorldInstance = GameApplication.RootAppObject.GetComponentInChildren<GameWorld>();
+                }
+
+                return _gameWorldInstance;
+            }
         }
     }
 }
