@@ -35,6 +35,12 @@ TextureImporter:
   - first:
       213: -8765859353574565459
     second: Herny-0003_15
+  - first:
+      213: -5510692012555254299
+    second: Herny-0003_3
+  - first:
+      213: -4459138467580201036
+    second: Herny-0003_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -66,8 +72,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -163,10 +169,10 @@ TextureImporter:
       name: Herny-0003_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 64
-        width: 17
-        height: 21
+        x: 102
+        y: 7
+        width: 12
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +190,10 @@ TextureImporter:
       name: Herny-0003_1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 64
-        width: 16
-        height: 21
+        x: 109
+        y: 7
+        width: 7
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,6 +392,48 @@ TextureImporter:
       bones: []
       spriteID: da917278c59695680800000000000000
       internalID: -8765859353574565459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 23
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5cf0dbfc61683b0800000000000000
+      internalID: -5510692012555254299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 7
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b73a937035fd12c0800000000000000
+      internalID: -4459138467580201036
       vertices: []
       indices: 
       edges: []

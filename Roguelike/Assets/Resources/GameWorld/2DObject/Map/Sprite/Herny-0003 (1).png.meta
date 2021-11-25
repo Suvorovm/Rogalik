@@ -107,6 +107,9 @@ TextureImporter:
   - first:
       213: 6207384765339148442
     second: Herny-0003 (1)_34
+  - first:
+      213: 4242121980436194504
+    second: Herny-0003 (1)_35
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,8 +141,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -256,10 +259,10 @@ TextureImporter:
       name: Herny-0003 (1)_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 109
-        width: 19
-        height: 19
+        x: 108
+        y: 23
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -907,10 +910,10 @@ TextureImporter:
       name: Herny-0003 (1)_32
       rect:
         serializedVersion: 2
-        x: 124
-        y: 36
-        width: 2
-        height: 3
+        x: 117
+        y: 23
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -962,6 +965,27 @@ TextureImporter:
       bones: []
       spriteID: a9026325e8f052650800000000000000
       internalID: 6207384765339148442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Herny-0003 (1)_35
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 7
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4a6c9277b0fda30800000000000000
+      internalID: 4242121980436194504
       vertices: []
       indices: 
       edges: []
