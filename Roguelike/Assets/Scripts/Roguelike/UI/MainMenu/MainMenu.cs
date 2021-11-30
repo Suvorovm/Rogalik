@@ -1,47 +1,45 @@
 
+using System;
 using Core;
+using Core.UI;
+using Core.UI.Model;
 using Core.Utils;
 using UnityEngine;
 using DG.Tweening;
 using Roguelike.UI;
-using Roguelike.UIService;
 using Roguelike.World;
+using Roguelike.World.Service;
+using Roguelike.World.UI;
 using UnityEngine.UI;
 
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour, IScreen
 {
-    [SerializeField] private UIService _UIService;
-    private GameObject _overlay;
-    private GameObject _mainMenu;
-    private GameObject _mainScreen;
-    private GameObject _ui;
+    public const string SCREEN_PATH = "UI/Game/MainMenu/Menu";
+    private const string PLAYER_PATH = "GameWorld/2DObject/Player/Player";
+
+    private GameWorld _world;
+    private UIService _UIService;
+    private LevelLoaderService _levelLoaderService;
+    
     private GameObject _player;
-    [SerializeField]public GameWorld _gameWorld;
-    void OnEnable()
-    {
-        //_UIService = GameApplication.RequireService<UIService>();
-        _mainMenu = ResourseLoadService.GetResource<GameObject>("UI/Game/MainMenu/MainMenu");
-        _mainScreen = GameObject.Find("MainScreen");
-        _ui = GameObject.Find("UI");
-        _mainMenu = Instantiate(_mainMenu, _ui.transform, false);
-        _mainMenu.name = "MainMenu";
-    }
+    [SerializeField] private Button _button;
 
     public void StartButton()
     {
-        //_mainMenu = _UIService.RequaireObjectUIByName("MainMenu");
-        
-        GameObject.FindWithTag("Menu").transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.Flash);// тут я пытался сделать анимацю с помощью дотвина но не судьба
-        GameObject.FindWithTag("Menu").SetActive(false);
-        //_mainMenu.SetActive(false);
-        //_player = ResourseLoadService.GetResource<GameObject>("GameWorld/2DObject/Player/Player");
-        GameObject _world = GameObject.Find("World");
-        //_player = Instantiate(_player, _world.transform, false);
-        _mainScreen = GameObject.Find("MainScreen");
-        _overlay = ResourseLoadService.GetResource<GameObject>("UI/Game/Overlay/pfGameOverlay");
-        _mainScreen = _gameWorld.RequaireObjectByName("Player");
-        _mainScreen.SetActive(false);
-        Instantiate(_overlay).transform.SetParent(_mainScreen.transform, false);
+        _levelLoaderService.LoadNextLevel();
+        _UIService.Init();
+        _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
+        _world = GameWorld.GameWorldInstance;
+        _player  = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
+        _world.AddGameObject(_player);
+    }
+
+    public void Configure(IScreenModel screenModel)
+    {
+        _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
+        _UIService = GameApplication.RequireService<UIService>();
+        _button.onClick.AddListener(StartButton);
+
     }
 }
