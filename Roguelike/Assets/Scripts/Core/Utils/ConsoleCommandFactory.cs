@@ -1,6 +1,12 @@
-﻿using IngameDebugConsole;
+﻿using Core.UI;
+using IngameDebugConsole;
 using JetBrains.Annotations;
+using Roguelike.Settings.Repository;
+using Roguelike.Settings.Service;
+using Roguelike.UI;
+using Roguelike.World;
 using Roguelike.World.Service;
+using Roguelike.World.UI;
 using UnityEngine;
 
 namespace Core.Utils
@@ -23,6 +29,14 @@ namespace Core.Utils
             Debug.Log(healthService.ToString());
         }
 
+        [ConsoleMethod("damagePlayer", "Наносит урон")]
+        [UsedImplicitly]
+        public static void DecrHealth(int damage)
+        {
+            HealthService healthService = GameApplication.RequireService<HealthService>();
+            healthService.DecreaseHealth(damage);
+        }
+
         [ConsoleMethod("loadLevel", "Загружает уровень")]
         [UsedImplicitly]
         public static void LoadLevelConsole(int levelNum)
@@ -37,6 +51,74 @@ namespace Core.Utils
         public static void RestartTheGame()
         {
             GameApplication.Restart();
+        }
+
+        [ConsoleMethod("testStaticGameWorld", "test Game World")]
+        [UsedImplicitly]
+        public static void TestGameWorldApi()
+        {
+            GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
+            GameObject testObject = gameWorldInstance.RequaireObjectByName("TestObject");
+            Debug.Log($"Is test object null {testObject == null}");
+        }
+        
+        
+        [ConsoleMethod("showAlert", "Showed Alert dialog")]
+        [UsedImplicitly]
+        public static void ShowAlertDialog()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowDialog<AlertDialog>(AlertDialog.DIALOG_PATH);
+        }
+        
+        
+        [ConsoleMethod("showError", "Showed Error dialog")]
+        [UsedImplicitly]
+        public static void ShowErrorDialog()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowDialog<ErrorDialog>(ErrorDialog.DIALOG_PATH);
+        }
+        
+        
+        [ConsoleMethod("turnOnMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOnMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOnMusic();
+        }
+        
+        [ConsoleMethod("turnOffMusic", "test Game World")]
+        [UsedImplicitly]
+        public static void TurnOffMusic()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            playerSettingsService.TurnOffMusic();
+        }
+        
+        [ConsoleMethod("isMusicTurnOn", "test Game World")]
+        [UsedImplicitly]
+        public static void IsMusicTurnOn()
+        {
+            PlayerSettingsService playerSettingsService = GameApplication.RequireService<PlayerSettingsService>();
+            Debug.Log($"PlayerSettingModel.MusicOn = {playerSettingsService.IsMusicOn}");
+        }
+
+        [ConsoleMethod("removeSettings", "test Game World")]
+        [UsedImplicitly]
+        public static void RemoveSettingsRepository()
+        {
+            PlayerSettingsRepository playerSettingsService = GameApplication.RequireService<PlayerSettingsRepository>();
+            playerSettingsService.Clear();
+        }
+
+        [ConsoleMethod("showMainScreen", "Show main Game screan")]
+        [UsedImplicitly]
+        public static void ShowMainScreen()
+        {
+            UIService uiService = GameApplication.RequireService<UIService>();
+            uiService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         }
     }
 }
