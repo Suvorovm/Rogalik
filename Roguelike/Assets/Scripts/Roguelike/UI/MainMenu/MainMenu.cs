@@ -24,6 +24,14 @@ public class MainMenu : MonoBehaviour, IScreen
     
     private GameObject _player;
     [SerializeField] private Button _button;
+    
+    public void Configure(IScreenModel screenModel)
+    {
+        _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
+        _UIService = GameApplication.RequireService<UIService>();
+        _button.onClick.AddListener(StartButton);
+
+    }
 
     public void StartButton()
     {
@@ -33,13 +41,5 @@ public class MainMenu : MonoBehaviour, IScreen
         _world = GameWorld.GameWorldInstance;
         _player  = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
         _world.AddGameObject(_player);
-    }
-
-    public void Configure(IScreenModel screenModel)
-    {
-        _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
-        _UIService = GameApplication.RequireService<UIService>();
-        _button.onClick.AddListener(StartButton);
-
     }
 }
