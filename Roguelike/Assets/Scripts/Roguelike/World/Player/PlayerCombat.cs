@@ -18,7 +18,7 @@ namespace Roguelike.World.Player
 
         private void Awake()
         {
-            EnemyHealthService _enemyHealth = GameApplication.RequireService<EnemyHealthService>();
+            _enemyHealth = GameApplication.RequireService<EnemyHealthService>();
         }
 
         public void Attack()

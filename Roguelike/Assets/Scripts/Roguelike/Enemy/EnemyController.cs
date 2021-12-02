@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Roguelike.World;
 using UnityEngine;
 
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float _enemyHealth = 50f;
+    [SerializeField] private float _enemyHP = 50f;
     [SerializeField]private Animator _animator;
+    private GameWorld _gameWorld;
     public void Awake()
     {
         EnemyHealthService enemyService = GameApplication.RequireService<EnemyHealthService>();
@@ -19,14 +21,13 @@ public class EnemyController : MonoBehaviour
     {
         if (id != gameObject.name)
         {
-            if (_enemyHealth > 0)
+            if (_enemyHP > 0)
             {
-                _enemyHealth -= damage;
+                _enemyHP -= damage;
             }
             else
             {
-
-                Destroy(this.gameObject);
+                _gameWorld.DestroyObjectByName(gameObject.name);
             }
 
             return;
