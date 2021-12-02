@@ -2,6 +2,8 @@ using Roguelike.World.Service;
 using Core;
 using UnityEngine;
 using Pathfinding;
+using Roguelike.World;
+
 public class EnemyAI: MonoBehaviour
 {
     [SerializeField]private float _cooldown=2.5f;
@@ -23,7 +25,7 @@ public class EnemyAI: MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        _target = GameWorld.GameWorldInstance.RequaireObjectByName("Player").transform;
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
     }

@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core;
 using UnityEngine;
 
+
 public class EnemyController : MonoBehaviour
 {
-    Animator animator;
-    private float _enemyHealth;
-
+    [SerializeField] private float _enemyHealth = 50f;
+    [SerializeField]private Animator _animator;
     public void Awake()
     {
         EnemyHealthService enemyService = GameApplication.RequireService<EnemyHealthService>();
@@ -31,5 +32,5 @@ public class EnemyController : MonoBehaviour
             return;
         }
     }
+    
 }
-

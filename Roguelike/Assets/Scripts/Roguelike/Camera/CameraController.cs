@@ -1,12 +1,19 @@
 
+using Roguelike.World;
+using Roguelike.World.Player;
 using UnityEngine;
 
-public class FollowForPlayer : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    
     [SerializeField] private int speed=5;
     [SerializeField] private float offsetX,offsetY;
     private Vector3 temp;
+    private Transform player;
+    void Start()
+    {
+         player = GameWorld.GameWorldInstance.RequaireObjectByName("Player").transform;
+    }
 
     void LateUpdate()
     {
