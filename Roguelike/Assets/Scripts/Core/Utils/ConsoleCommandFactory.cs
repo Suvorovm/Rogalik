@@ -120,5 +120,13 @@ namespace Core.Utils
             UIService uiService = GameApplication.RequireService<UIService>();
             uiService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         }
+        
+        [ConsoleMethod("showDamageTaken", "Shows taken damage")]
+        [UsedImplicitly]
+        public static void ShowDamageTaken()
+        {
+            GameMasterService gameMasterService = GameApplication.RequireService<GameMasterService>();
+            Debug.Log(gameMasterService.DamageTaken);
+        }
     }
 }

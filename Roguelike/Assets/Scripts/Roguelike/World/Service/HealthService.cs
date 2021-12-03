@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 
 namespace Roguelike.World.Service
 {
@@ -15,9 +16,12 @@ namespace Roguelike.World.Service
         private const float MAX_HEALTH = 100;
         private float _health;
 
+        private GameMasterService _gameMasterService;
+
         private void Awake()
         {
             _health = MAX_HEALTH;
+            _gameMasterService = GameApplication.RequireService<GameMasterService>();
         }
 
         public void IncreaseHealth(float hp)
@@ -32,6 +36,7 @@ namespace Roguelike.World.Service
             _health -= hp;
             if (_health > 0) {
                 OnHealthUpdate?.Invoke(_health);
+                _gameMasterService.DamageTaken = hp;
             } else {
                 OnDeath?.Invoke();
                 _health = 0;
