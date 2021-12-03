@@ -2,6 +2,8 @@ using Roguelike.World.Service;
 using Core;
 using UnityEngine;
 using Pathfinding;
+using Roguelike.World;
+
 public class EnemyAI: MonoBehaviour
 {
     [SerializeField]private float _cooldown=2.5f;
@@ -9,6 +11,7 @@ public class EnemyAI: MonoBehaviour
     [SerializeField]private float _enemyDamage = 10; 
     [SerializeField]private float _speed = 15f;
     [SerializeField]private float _attackDistance=1.5f;
+    private Animator animator;
     private float _nextWaypointD = 2f;
     private Path path;
     private int _currentWaypoint=0;
@@ -18,10 +21,11 @@ public class EnemyAI: MonoBehaviour
     private Transform _target;
     private const float _UPDATE_TIME=0.5f;
     private float _next_Update_Time = 0.0f;
-    private float _attackTimer;
+    private float _attackTimer=0;
     void Start()
     {
-        _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        animator = GetComponentInChildren<Animator>();
+        _target = GameWorld.GameWorldInstance.RequaireObjectByName("Player").transform;
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -71,7 +75,7 @@ public class EnemyAI: MonoBehaviour
             
         }
 
-        if (distanceToTarget < _visible && distanceToTarget <= _attackDistance && _attackTimer==0)
+        if (distanceToTarget <= _attackDistance && _attackTimer==0)
         {
             Attack();
             _attackTimer = _cooldown;
@@ -82,6 +86,7 @@ public class EnemyAI: MonoBehaviour
        Vector2 direction = ((Vector2) path.vectorPath[_currentWaypoint] - _rb.position).normalized;
                Vector2 force = direction * _speed * Time.deltaTime;
                _rb.AddForce(force);
+               animator.Play(gameObject.name+"_Walk");
                float distance = Vector2.Distance(_rb.position, path.vectorPath[_currentWaypoint]);
                if (distance < _nextWaypointD)
                {
@@ -91,6 +96,7 @@ public class EnemyAI: MonoBehaviour
 
     private void Attack()
     {
+        animator.Play(gameObject.name+"_Attack");
         HealthService healthService = GameApplication.RequireService<HealthService>();
         healthService.DecreaseHealth(_enemyDamage);
         Debug.Log("Attack"); 
