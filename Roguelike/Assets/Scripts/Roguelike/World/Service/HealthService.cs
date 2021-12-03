@@ -34,6 +34,8 @@ namespace Roguelike.World.Service
                 OnHealthUpdate?.Invoke(_health);
             } else {
                 OnDeath?.Invoke();
+                _health = 0;
+                OnHealthUpdate?.Invoke(_health);
             }
         }
 
