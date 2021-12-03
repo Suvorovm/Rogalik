@@ -22,12 +22,14 @@ public class PauseDialog : MonoBehaviour, IDialog
         _resumeButton.onClick.AddListener(OnResumeButtonClick);
         _menuButton.onClick.AddListener(OnMenuButtonClick);
         _pause = GameApplication.RequireService<PauseService>();
+        _pause.ChangePauseState();
+
     }
 
     private void OnMenuButtonClick()
     {
        GameApplication.Restart();
-       Debug.Log("Кто это читает, тот Егор" );
+       Debug.Log("Проверка" );
     }
 
     private void OnResumeButtonClick()
