@@ -45,7 +45,6 @@ namespace Core.Utils
             levelLoaderService.LoadNextLevel(levelNum);
         }
 
-
         [ConsoleMethod("restart", "Restart")]
         [UsedImplicitly]
         public static void RestartTheGame()
