@@ -1,6 +1,7 @@
 ﻿using Core;
 using Core.UI;
 using Core.UI.Model;
+using Roguelike.UI;
 using Roguelike.World.Player;
 using Roguelike.World.Service;
 using Roguelike.World.UI.Components;
@@ -16,15 +17,15 @@ namespace Roguelike.World.UI
         [SerializeField] private Button _pauseButton;
         [SerializeField] private Button _attackButton;
         private PlayerAttackService _playerAttackService;
-        private GameMasterService _gameMasterService;
+        private UIService _uiService;
 
         public void Configure(IScreenModel screenModel)
         {
             HealthService.OnHealthUpdate += UpdateHealthBar;
             _pauseButton.onClick.AddListener(OnPauseButtonClick);
-            _gameMasterService = GameApplication.RequireService<GameMasterService>();
             _playerAttackService = GameApplication.RequireService<PlayerAttackService>();
             _attackButton.onClick.AddListener(OnAttackButtonClick);
+            _uiService = GameApplication.RequireService<UIService>();
         }
 
         private void OnAttackButtonClick()
@@ -34,7 +35,7 @@ namespace Roguelike.World.UI
 
         private void OnPauseButtonClick()
         {
-            _gameMasterService.PauseGame();
+            _uiService.ShowDialog<PauseDialog>(PauseDialog.DIALOG_PATH);;
         }
 
         private void UpdateHealthBar(float health)
