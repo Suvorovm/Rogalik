@@ -6,7 +6,6 @@ namespace Roguelike.World.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private const string PLAYER_NAME = "Player";
         [SerializeField]
         private float _speed = 2.5f;
         private Sequence _sequence;
@@ -14,7 +13,6 @@ namespace Roguelike.World.Player
 
         private void OnEnable()
         {
-            name = PLAYER_NAME;
             InputController.OnJoyStickMove += Move;
         }
 
