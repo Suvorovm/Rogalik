@@ -55,9 +55,10 @@ namespace Roguelike.World
         public void AddGameObject(GameObject gO, [CanBeNull] GameObject container = null,
             bool worldPositionStays = false)
         {
-            FetchWorldObjects();
             Transform parentContainer = container == null ? transform : container.transform;
-            Instantiate(gO).transform.SetParent(parentContainer, worldPositionStays);
+            GameObject instantiate = Instantiate(gO);
+            instantiate.transform.SetParent(parentContainer, worldPositionStays);
+            _gameWorldObjects.Add(instantiate);
         }
 
         public void CreateObject(string reqObject, [CanBeNull] string parentObject)
