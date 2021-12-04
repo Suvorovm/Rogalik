@@ -58,6 +58,7 @@ namespace Roguelike.World
             FetchWorldObjects();
             Transform parentContainer = container == null ? transform : container.transform;
             Instantiate(gO).transform.SetParent(parentContainer, worldPositionStays);
+            FetchWorldObjects();
         }
 
         public void CreateObject(string reqObject, [CanBeNull] string parentObject)
