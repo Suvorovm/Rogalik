@@ -16,10 +16,11 @@ namespace Roguelike.World
 
         public event Action OnInitialized;
 
-        private void Awake()
+        public void Init()
         {
             FetchWorldObjects();
             OnInitialized?.Invoke();
+            
         }
 
         [NotNull]

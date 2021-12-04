@@ -17,11 +17,6 @@ namespace Roguelike.World.Player
             
         }
 
-        private void OnEnable()
-        {
-            
-        }
-
         private void OnInitialized()
         {
             Debug.Log("World Created");
@@ -36,7 +31,7 @@ namespace Roguelike.World.Player
 
         public void Attack()
         {
-            _player = _gameWorld.RequaireObjectByName("Player(Clone)");
+            _player = _gameWorld.RequaireObjectByName("Player");
             _playerCombat = _player.GetComponent<PlayerCombat>();
             _playerCombat.Attack();
         }

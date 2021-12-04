@@ -30,6 +30,7 @@ public class PauseDialog : MonoBehaviour, IDialog
     {
        GameApplication.Restart();
        Debug.Log("Проверка" );
+       _pause.ChangePauseState();
     }
 
     private void OnResumeButtonClick()

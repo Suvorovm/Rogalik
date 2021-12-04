@@ -39,7 +39,6 @@ public class MainMenu : MonoBehaviour, IScreen
         _UIService.Init();
         _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         _world = GameWorld.GameWorldInstance;
-        _player  = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
-        _world.AddGameObject(_player);
+        
     }
 }
