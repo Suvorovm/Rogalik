@@ -35,7 +35,6 @@ public class MainMenu : MonoBehaviour, IScreen
     public void StartButton()
     {
         _levelLoaderService.LoadNextLevel();
-        _UIService.Init();
         _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         _world = GameWorld.GameWorldInstance;
     }
