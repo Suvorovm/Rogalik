@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour, IScreen
 {
     public const string SCREEN_PATH = "UI/Game/MainMenu/Menu";
     private const string PLAYER_PATH = "GameWorld/2DObject/Player/Player";
-
+    
     private GameWorld _world;
     private UIService _UIService;
     private LevelLoaderService _levelLoaderService;
@@ -30,15 +30,12 @@ public class MainMenu : MonoBehaviour, IScreen
         _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
         _UIService = GameApplication.RequireService<UIService>();
         _button.onClick.AddListener(StartButton);
-
     }
 
     public void StartButton()
     {
         _levelLoaderService.LoadNextLevel();
-        _UIService.Init();
         _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         _world = GameWorld.GameWorldInstance;
-        
     }
 }
