@@ -7,18 +7,22 @@ namespace Roguelike.World.Player
     {
         private PlayerCombat _playerCombat;
         private GameWorld _gameWorld;
+        private GameObject _player;
+        
 
         public void Awake()
         {
             _gameWorld = GameWorld.GameWorldInstance;
             _gameWorld.OnInitialized += OnInitialized;
+            
         }
 
         private void OnInitialized()
         {
             Debug.Log("World Created");
-
-            _playerCombat = _gameWorld.GetComponentInWorld<PlayerCombat>();
+            //
+            // _playerCombat = _gameWorld.GetComponentInWorld<PlayerCombat>();
+            
         }
         private void OnDestroy()
         {
@@ -27,6 +31,8 @@ namespace Roguelike.World.Player
 
         public void Attack()
         {
+            _player = _gameWorld.RequaireObjectByName("Player");
+            _playerCombat = _player.GetComponent<PlayerCombat>();
             _playerCombat.Attack();
         }
 

@@ -13,42 +13,55 @@ namespace Roguelike.World.Service
     public class LevelLoaderService : MonoBehaviour
     {
         private const string LEVEL_PATH = "GameWorld/Levels/Level_";
+        private const string CAMERA_NAME = "Main Camera";
         private const string CLONE_STRING = "(Clone)";
-        private int _levelNumberNumber = 0;
+
+     
+        private const string PLAYER_PATH = "GameWorld/2DObject/Player/Player";
+
         private const string LEVEL_PREFIX = "Level_";
+        
+        private int _levelNumber = 0;
+        private GameObject _player;
+       
 
-
+        private CameraController _camera;
         [SerializeField] private GameWorld _gameWorld;
 
 
         public void LoadNextLevel(int nextLevelnum = 0)
         {
+            _player  = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
+            _gameWorld.AddGameObject(_player);
             _gameWorld.DestroyObjectByName(CurentLevelName);
 
 
             if (nextLevelnum == 0)
             {
-                _levelNumberNumber++;
+                _levelNumber++;
                 Debug.Log("New level value");
             }
             else
             {
-                _levelNumberNumber = nextLevelnum;
+                _levelNumber = nextLevelnum;
                 Debug.Log("New level value");
             }
 
-            string nextLevelPath = LEVEL_PATH + _levelNumberNumber;
+            string nextLevelPath = LEVEL_PATH + _levelNumber;
             _gameWorld.AddGameObject(ResourseLoadService.GetResource<GameObject>(nextLevelPath));
+            _gameWorld.Init();
+            _camera = _gameWorld.RequaireObjectByName(CAMERA_NAME).GetComponent<CameraController>(); 
+            _camera.Init();
         }
 
         public string CurentLevelName
         {
-            get { return LEVEL_PREFIX + _levelNumberNumber + CLONE_STRING; }
+            get { return LEVEL_PREFIX + _levelNumber + CLONE_STRING; }
         }
 
         public int CurentLevelNumber
         {
-            get { return _levelNumberNumber; }
+            get { return _levelNumber; }
         }
     }
 }

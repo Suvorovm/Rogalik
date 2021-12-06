@@ -58,7 +58,7 @@ namespace Core.Utils
         public static void TestGameWorldApi()
         {
             GameWorld gameWorldInstance = GameWorld.GameWorldInstance;
-            GameObject testObject = gameWorldInstance.RequaireObjectByName("TestObject");
+            GameObject testObject = gameWorldInstance.RequaireObjectByName("Player");
             Debug.Log($"Is test object null {testObject == null}");
         }
         
