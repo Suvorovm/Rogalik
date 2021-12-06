@@ -21,7 +21,7 @@ public class LevelEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collided");
-        _pause.ChangePauseState();
+       // _pause.ChangePauseState();
         _uiService.ShowDialog<LevelEndDialog>(LevelEndDialog.DIALOG_PATH);
     }
 }

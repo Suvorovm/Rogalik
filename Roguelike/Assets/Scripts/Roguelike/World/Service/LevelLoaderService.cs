@@ -14,7 +14,7 @@ namespace Roguelike.World.Service
     {
         private const string LEVEL_PATH = "GameWorld/Levels/Level_";
         private const string CLONE_STRING = "(Clone)";
-        private int _levelNumber = 0;
+        private int _levelNumberNumber = 0;
         private const string LEVEL_PREFIX = "Level_";
 
 
@@ -28,22 +28,27 @@ namespace Roguelike.World.Service
 
             if (nextLevelnum == 0)
             {
-                _levelNumber++;
+                _levelNumberNumber++;
                 Debug.Log("New level value");
             }
             else
             {
-                _levelNumber = nextLevelnum;
+                _levelNumberNumber = nextLevelnum;
                 Debug.Log("New level value");
             }
 
-            string nextLevelPath = LEVEL_PATH + _levelNumber;
+            string nextLevelPath = LEVEL_PATH + _levelNumberNumber;
             _gameWorld.AddGameObject(ResourseLoadService.GetResource<GameObject>(nextLevelPath));
         }
 
         public string CurentLevelName
         {
-            get { return LEVEL_PREFIX + _levelNumber + CLONE_STRING; }
+            get { return LEVEL_PREFIX + _levelNumberNumber + CLONE_STRING; }
+        }
+
+        public int CurentLevelNumber
+        {
+            get { return _levelNumberNumber; }
         }
     }
 }
