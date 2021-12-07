@@ -200,8 +200,8 @@ MonoBehaviour:
   _cooldown: 2.5
   _visible: 10
   _enemyDamage: 10
-  _speed: 15
-  _attackDistance: 1.5
+  _speed: 35
+  _attackDistance: 2.5
 --- !u!114 &2803708742411574351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,5 +242,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308fc7e950f609e4d8fd2ec821da38f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHP: 50
+  _enemyHP: 75
   _animator: {fileID: 0}

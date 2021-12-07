@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d80e7ccedc81d24fbffb9ae8d100422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldown: 2.5
-  _visible: 20
-  _enemyDamage: 10
-  _speed: 30
+  _cooldown: 4
+  _visible: 10
+  _enemyDamage: 15
+  _speed: 50
   _attackDistance: 3
 --- !u!50 &2467336527284925301
 Rigidbody2D:
