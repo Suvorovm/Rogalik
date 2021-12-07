@@ -23,36 +23,38 @@ namespace Roguelike.UI
         private UIService _uiService;
         private GameMasterService _gameMasterService;
 
-        private void Awake()
+        private void RequireService()
         {
             _levelLoader = GameApplication.RequireService<LevelLoaderService>();
             _gameMasterService = GameApplication.RequireService<GameMasterService>();
             _uiService = GameApplication.RequireService<UIService>();
+            _damageTaken.text = "Damage taken:" + _gameMasterService.DamageTaken;
         }
 
         public void Configure(IDialogModel dialogModel)
         {
             _restartButton.onClick.AddListener(LevelRestart);
             _nextLevelButton.onClick.AddListener(LoadNextLevel);
-            _damageTaken.text = "Damage taken:" + _gameMasterService.DamageTaken;
+            RequireService();
         }
 
         private void LevelRestart()
         {
             _levelLoader.LoadNextLevel(_levelLoader.CurentLevelNumber);
             _uiService.HideDialog<LevelEndDialog>();
-           
+            _gameMasterService.PauseGame();
         }
 
         private void LoadNextLevel()
         {
             _levelLoader.LoadNextLevel();
             _uiService.HideDialog<LevelEndDialog>();
-          
+            _gameMasterService.PauseGame();
         }
 
         private void GoToMainMenu()
         {
+            
         }
     }
 }

@@ -9,23 +9,28 @@ namespace Roguelike.World.Service
     {
         private HealthService _healthService;
         private PauseService _pauseService;
-
-        private float _damageTaken = 0f;
+        private float stat;
+        
         private void OnEnable()
         {
             _healthService = GameApplication.RequireService<HealthService>();
             _pauseService = GameApplication.RequireService<PauseService>();
+            HealthService.OnHealthDecrease += CalculateDamage;
         }
         
         public void PauseGame()
         {
             _pauseService.ChangePauseState();
         }
-        
-        public float DamageTaken
+
+        private void CalculateDamage(float damage)
         {
-            get {  return _damageTaken ; }
-            set { _damageTaken += value; }
+            DamageTaken = damage + DamageTaken;
+        }
+         public float DamageTaken
+        {
+            get {  return  stat; }
+            set { stat = value; }
         }
     }
 }

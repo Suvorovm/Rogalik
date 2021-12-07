@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6903716643840732381}
   - component: {fileID: 8610464548283626080}
   m_Layer: 0
-  m_Name: prLevelEnd
+  m_Name: prLevelEndTriger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

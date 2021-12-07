@@ -8,6 +8,10 @@ namespace Roguelike.World.Service
         public delegate void HealthUpdate(float health);
 
         public static event HealthUpdate OnHealthUpdate;
+        
+        public delegate void HealthDecrease(float damage);
+
+        public static event HealthDecrease OnHealthDecrease;
 
         public delegate void Death();
 
@@ -15,6 +19,7 @@ namespace Roguelike.World.Service
 
         private const float MAX_HEALTH = 100;
         private float _health;
+        private float _damageTaken = 0f;
 
         private GameMasterService _gameMasterService;
 
@@ -34,9 +39,10 @@ namespace Roguelike.World.Service
         public void DecreaseHealth(float hp)
         {
             _health -= hp;
+            OnHealthDecrease?.Invoke(hp);
             if (_health > 0) {
                 OnHealthUpdate?.Invoke(_health);
-                _gameMasterService.DamageTaken = hp;
+                
             } else {
                 OnDeath?.Invoke();
                 _health = 0;
