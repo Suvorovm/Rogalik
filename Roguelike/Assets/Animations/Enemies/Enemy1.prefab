@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2467336526550402714}
   - component: {fileID: 2467336526550402712}
   - component: {fileID: 2467336526550402713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alive1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.020893008, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.2}
+  m_Size: {x: 0.11792691, y: 0.2}
   m_EdgeRadius: 0
 --- !u!1 &2467336527284925305
 GameObject:
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2467336527284925307}
   - component: {fileID: 2467336527284925301}
   - component: {fileID: 6206606519808725411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 2467336527284925305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.8970187, y: -1.5426768, z: -9.378604}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 2467336526550402718}
   m_Father: {fileID: 0}
@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 4
-  _visible: 10
+  _visible: 20
   _enemyDamage: 15
   _speed: 50
-  _attackDistance: 3
+  _attackDistance: 1.5
 --- !u!50 &2467336527284925301
 Rigidbody2D:
   serializedVersion: 4
@@ -222,8 +222,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
