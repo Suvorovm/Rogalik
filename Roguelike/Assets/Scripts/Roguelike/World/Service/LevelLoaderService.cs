@@ -20,6 +20,7 @@ namespace Roguelike.World.Service
         
         private int _levelNumber = 0;
         private GameObject _player;
+        private PlayerProgressService _playerProgressService;
        
 
         private CameraController _camera;
@@ -28,8 +29,18 @@ namespace Roguelike.World.Service
 
         public void LoadNextLevel(int nextLevelnum = 0)
         {
-            _player  = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
-            _gameWorld.AddGameObject(_player);
+            
+            
+            _playerProgressService = GameApplication.RequireService<PlayerProgressService>();
+            try
+            {
+                _gameWorld.RequaireObjectByName("Player");
+            } catch(NullReferenceException o)
+            {
+                _player = ResourseLoadService.GetResource<GameObject>(PLAYER_PATH);
+                _gameWorld.AddGameObject(_player);
+            }
+
             _gameWorld.DestroyObjectByName(CurentLevelName);
 
 
@@ -49,6 +60,7 @@ namespace Roguelike.World.Service
             _gameWorld.Init();
             _camera = _gameWorld.RequaireObjectByName(CAMERA_NAME).GetComponent<CameraController>(); 
             _camera.Init();
+            _playerProgressService.NextLevel(_levelNumber);
         }
 
         public string CurentLevelName
