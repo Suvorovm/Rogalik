@@ -11,27 +11,35 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _enemyHP = 50f;
     [SerializeField]private Animator _animator;
     private GameWorld _gameWorld;
+    private GameObject _enemy;
     public void Awake()
     {
+        
+        _gameWorld=GameWorld.GameWorldInstance;
         EnemyHealthService enemyService = GameApplication.RequireService<EnemyHealthService>();
         enemyService.OnTakeDamage += OnTakeDamage;
     }
 
     public void OnTakeDamage(string id, float damage)
     {
-        if (id != gameObject.name)
+        _enemy = GameWorld.GameWorldInstance.RequaireObjectByName($"{id}");
+        if ( _enemy.name==gameObject.name && _enemy!= null)
         {
             if (_enemyHP > 0)
             {
-                _enemyHP -= damage;
+               _enemyHP -= damage;
+                return;
             }
             else
             {
-                _gameWorld.DestroyObjectByName(gameObject.name);
+                EnemyHealthService enemyService = GameApplication.RequireService<EnemyHealthService>();
+                enemyService.OnTakeDamage -= OnTakeDamage;
+                _gameWorld.DestroyObjectByName(_enemy.name);
             }
 
             return;
         }
+        
     }
     
 }

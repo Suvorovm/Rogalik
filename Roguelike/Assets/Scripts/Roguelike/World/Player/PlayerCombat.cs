@@ -6,18 +6,20 @@ namespace Roguelike.World.Player
 {
     public class PlayerCombat : MonoBehaviour
     {
+        [SerializeField]private Transform _attackPoint;
         [SerializeField] private Animator _animator;
-        [SerializeField] private Transform AttackPoint;
-        [SerializeField] private float _attackRange = 0.5f;
+        [SerializeField] private float _attackRange = 0.8f;
         [SerializeField] private Transform abilityStPoint;
         [SerializeField] private float _fireballspeed = 10f;
         [SerializeField] private float _playerDamage = 15f;
         public LayerMask enemyLayers;
         public GameObject fireballPrefab;
         private EnemyHealthService _enemyHealth;
-
+        
+        
         private void Awake()
         {
+            
             _enemyHealth = GameApplication.RequireService<EnemyHealthService>();
         }
 
@@ -25,9 +27,11 @@ namespace Roguelike.World.Player
         {
             Debug.Log("Try attack");
             _animator.SetTrigger("Attack");
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(AttackPoint.position, _attackRange, enemyLayers);
-            foreach (Collider2D enemy in hitEnemies) {
-                _enemyHealth.DamageEnemy("{enemy.name}",_playerDamage);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, enemyLayers);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                
+                _enemyHealth.DamageEnemy(enemy.name,_playerDamage);
                 Debug.Log("I hit this fucker" + enemy.name);
             }
         }

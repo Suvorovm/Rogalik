@@ -22,6 +22,7 @@ public class EnemyAI: MonoBehaviour
     private const float _UPDATE_TIME=0.5f;
     private float _next_Update_Time = 0.0f;
     private float _attackTimer=0;
+    private float _distanceToTarget;
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -32,7 +33,8 @@ public class EnemyAI: MonoBehaviour
     
     private void UpdatePath()
     {
-        if (IsUpdateTimeReached()==true)
+        _distanceToTarget = Vector3.Distance(transform.position, _target.transform.position);
+        if (IsUpdateTimeReached()==true && _distanceToTarget < _visible )
         {
             if(_seeker.IsDone()) _seeker.StartPath(_rb.position, _target.position, OnPathComplete);
         }
@@ -66,16 +68,16 @@ public class EnemyAI: MonoBehaviour
         {
             _reachedEndofPath = false;
         }
-        float distanceToTarget = Vector3.Distance(transform.position, _target.transform.position);
+        float _distanceToTarget = Vector3.Distance(transform.position, _target.transform.position);
         AttackTimer();
-        if (distanceToTarget < _visible && distanceToTarget>_attackDistance)
+        if (_distanceToTarget < _visible && _distanceToTarget>_attackDistance)
         {
             
             Walk();
             
         }
 
-        if (distanceToTarget <= _attackDistance && _attackTimer==0)
+        if (_distanceToTarget <= _attackDistance && _attackTimer==0)
         {
             Attack();
             _attackTimer = _cooldown;

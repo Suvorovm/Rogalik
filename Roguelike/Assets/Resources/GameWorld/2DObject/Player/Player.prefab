@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3034379476775208494}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,8 +132,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9447bd22914e12a063fc7e8bca24d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.5
+  _speed: 10
 --- !u!114 &6374051698254021994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,15 +196,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e2efe24c2f00e40bd886ca7638b1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackPoint: {fileID: 3034379476775208494}
   _animator: {fileID: 1500581704583324634}
-  AttackPoint: {fileID: 3034379476775208494}
-  _attackRange: 0.5
-  abilityStPoint: {fileID: 0}
+  _attackRange: 1
+  abilityStPoint: {fileID: 3034379476775208494}
   _fireballspeed: 10
   _playerDamage: 15
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   fireballPrefab: {fileID: 0}
 --- !u!61 &1747354080399043371
 BoxCollider2D:
