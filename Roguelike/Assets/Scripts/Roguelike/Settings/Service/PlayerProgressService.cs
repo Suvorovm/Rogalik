@@ -18,7 +18,7 @@ public class PlayerProgressService : MonoBehaviour
    }
    
    [PublicAPI]
-   public void NextLevel(int lvl)
+   public void SaveNextLevel(int lvl)
    {
       _playerProgressModel.CurrentLevel=lvl;
       _playerProgressRepository.Save(_playerProgressModel);
@@ -31,5 +31,5 @@ public class PlayerProgressService : MonoBehaviour
       
    }
 
-   public int currentLevel => _playerProgressModel.CurrentLevel;
+   public int CurrentLevel => _playerProgressModel.CurrentLevel;
 }

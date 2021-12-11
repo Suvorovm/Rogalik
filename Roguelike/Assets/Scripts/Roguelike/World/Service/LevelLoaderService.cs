@@ -60,7 +60,7 @@ namespace Roguelike.World.Service
             _gameWorld.Init();
             _camera = _gameWorld.RequaireObjectByName(CAMERA_NAME).GetComponent<CameraController>(); 
             _camera.Init();
-            _playerProgressService.NextLevel(_levelNumber);
+            _playerProgressService.SaveNextLevel(_levelNumber);
         }
 
         public string CurentLevelName

@@ -31,10 +31,13 @@ public class MainMenu : MonoBehaviour, IScreen
     {
         _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
         _playerProgressService = GameApplication.RequireService<PlayerProgressService>();
-        
         _UIService = GameApplication.RequireService<UIService>();
         _startButton.onClick.AddListener(StartButton);
         _resumeButton.onClick.AddListener(ResumeButton);
+        if (_playerProgressService.CurrentLevel <= 1)
+        {
+            _resumeButton.gameObject.SetActive(false);
+        }
     }
 
     public void StartButton()
@@ -46,7 +49,7 @@ public class MainMenu : MonoBehaviour, IScreen
 
     public void ResumeButton()
     {
-        _levelLoaderService.LoadNextLevel(_playerProgressService.currentLevel);
+        _levelLoaderService.LoadNextLevel(_playerProgressService.CurrentLevel);
         _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         _world = GameWorld.GameWorldInstance;
     }
