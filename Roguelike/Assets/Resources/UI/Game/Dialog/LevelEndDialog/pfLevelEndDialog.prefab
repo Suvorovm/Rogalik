@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _restartButton: {fileID: 3685533809939685348}
   _nextLevelButton: {fileID: 7828520200346245384}
-  _damageTaken: {fileID: 1822984336952915039}
+  _damageTakenText: {fileID: 1822984336952915039}
 --- !u!1 &5726321275827327294
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,25 +17,30 @@ namespace Roguelike.UI
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _nextLevelButton;
 
-        [SerializeField] private Text _damageTaken;
+        [SerializeField] private Text _damageTakenText;
 
         private LevelLoaderService _levelLoader;
         private UIService _uiService;
         private GameMasterService _gameMasterService;
+        private HealthService _healthService;
 
         private void RequireService()
         {
             _levelLoader = GameApplication.RequireService<LevelLoaderService>();
             _gameMasterService = GameApplication.RequireService<GameMasterService>();
             _uiService = GameApplication.RequireService<UIService>();
-            _damageTaken.text = "Damage taken:" + _gameMasterService.DamageTaken;
+            _healthService = GameApplication.RequireService<HealthService>();
+            
+            
         }
 
         public void Configure(IDialogModel dialogModel)
         {
+            RequireService();
             _restartButton.onClick.AddListener(LevelRestart);
             _nextLevelButton.onClick.AddListener(LoadNextLevel);
-            RequireService();
+           
+            _damageTakenText.text = "Damage taken: " + _healthService.DamageTaken;
         }
 
         private void LevelRestart()
