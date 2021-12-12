@@ -9,10 +9,9 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private int speed=5;
     [SerializeField] private float offsetX,offsetY;
-    
+    [SerializeField] private GameObject _player;
     private Vector3 temp;
     private GameWorld _gameWorld;
-    private GameObject _player;
     private Camera _camera;
 
 
@@ -21,13 +20,14 @@ public class CameraController : MonoBehaviour
         _gameWorld = GameWorld.GameWorldInstance;
         _player = _gameWorld.RequaireObjectByName(PLAYER_NAME);
         _camera = GetComponent<Camera>();
-        _camera.depth = 1;
+        _camera.depth += 0;
 
     }
     void LateUpdate()
     {
         if (_player != null)
         {
+            Debug.Log("u");
             temp = _player.transform.position;
             temp.x += offsetX;
             temp.y += offsetY;
