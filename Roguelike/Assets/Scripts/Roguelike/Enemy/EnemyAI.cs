@@ -11,6 +11,7 @@ public class EnemyAI: MonoBehaviour
     [SerializeField]private float _enemyDamage = 10; 
     [SerializeField]private float _speed = 15f;
     [SerializeField]private float _attackDistance=1.5f;
+    private Transform m_transform;
     private Animator animator;
     private float _nextWaypointD = 2f;
     private Path path;
@@ -25,6 +26,7 @@ public class EnemyAI: MonoBehaviour
     private float _distanceToTarget;
     void Start()
     {
+        m_transform = GetComponent<Transform>();
         animator = GetComponentInChildren<Animator>();
         _target = GameWorld.GameWorldInstance.RequaireObjectByName("Player").transform;
         _seeker = GetComponent<Seeker>();
@@ -86,14 +88,13 @@ public class EnemyAI: MonoBehaviour
     private void Walk()
     {
        Vector2 direction = ((Vector2) path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-               Vector2 force = direction * _speed * Time.deltaTime;
-               _rb.AddForce(force);
-               animator.Play(gameObject.name+"_Walk");
-               float distance = Vector2.Distance(_rb.position, path.vectorPath[_currentWaypoint]);
-               if (distance < _nextWaypointD)
-               {
-                   _currentWaypoint++;
-               } 
+       m_transform.Translate(direction * _speed * Time.deltaTime);
+       animator.Play(gameObject.name+"_Walk");
+       float distance = Vector2.Distance(_rb.position, path.vectorPath[_currentWaypoint]);
+       if (distance < _nextWaypointD)
+       {
+           _currentWaypoint++;
+        } 
     }
 
     private void Attack()
