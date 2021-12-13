@@ -27,7 +27,6 @@ public class CameraController : MonoBehaviour
     {
         if (_player != null)
         {
-            Debug.Log("u");
             temp = _player.transform.position;
             temp.x += offsetX;
             temp.y += offsetY;
