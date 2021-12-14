@@ -21,20 +21,35 @@ public class MainMenu : MonoBehaviour, IScreen
     private GameWorld _world;
     private UIService _UIService;
     private LevelLoaderService _levelLoaderService;
+    private PlayerProgressService _playerProgressService;
     
     private GameObject _player;
-    [SerializeField] private Button _button;
+    [SerializeField] private Button _startButton;
+    [SerializeField] private Button _resumeButton;
     
     public void Configure(IScreenModel screenModel)
     {
         _levelLoaderService = GameApplication.RequireService<LevelLoaderService>();
+        _playerProgressService = GameApplication.RequireService<PlayerProgressService>();
         _UIService = GameApplication.RequireService<UIService>();
-        _button.onClick.AddListener(StartButton);
+        _startButton.onClick.AddListener(StartButton);
+        _resumeButton.onClick.AddListener(ResumeButton);
+        if (_playerProgressService.CurrentLevel <= 1)
+        {
+            _resumeButton.gameObject.SetActive(false);
+        }
     }
 
     public void StartButton()
     {
         _levelLoaderService.LoadNextLevel();
+        _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
+        _world = GameWorld.GameWorldInstance;
+    }
+
+    public void ResumeButton()
+    {
+        _levelLoaderService.LoadNextLevel(_playerProgressService.CurrentLevel);
         _UIService.ShowScreen<GameScreen>(GameScreen.SCREEN_PATH);
         _world = GameWorld.GameWorldInstance;
     }

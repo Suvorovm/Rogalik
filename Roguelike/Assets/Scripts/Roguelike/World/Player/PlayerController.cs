@@ -8,6 +8,8 @@ namespace Roguelike.World.Player
         private const string PLAYER_NAME = "Player";
         [SerializeField]
         private float _speed = 2.5f;
+
+        [SerializeField] private GameObject _attackPoint;
         private bool _facingRight;
         private Rigidbody2D _rigidbody2D;
 
@@ -39,7 +41,10 @@ namespace Roguelike.World.Player
                 return;
             }
             _facingRight = !_facingRight;
-            transform.Rotate(0f,180f,0f);
+            Vector3 scaler = transform.localScale;
+            scaler.x *= -1;
+            transform.localScale = scaler;
+            _attackPoint.transform.Rotate(0,180,0);
         }
     }
 }
