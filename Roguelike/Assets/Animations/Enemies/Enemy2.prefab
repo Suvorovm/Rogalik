@@ -147,11 +147,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2696594775549630192}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 40
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   _cooldown: 2.5
   _visible: 15
   _enemyDamage: 10
-  _speed: 2
+  _speed: 2500
   _attackDistance: 1.7
 --- !u!114 &2803708742411574351
 MonoBehaviour:

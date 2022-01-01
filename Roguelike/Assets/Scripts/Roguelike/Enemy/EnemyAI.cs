@@ -88,13 +88,13 @@ public class EnemyAI: MonoBehaviour
     private void Walk()
     {
        Vector2 direction = ((Vector2) path.vectorPath[_currentWaypoint] - _rb.position).normalized;
-       m_transform.Translate(direction * _speed * Time.deltaTime);
+       Vector2 force = direction * _speed * Time.deltaTime;
+       _rb.AddForce(force);
        animator.Play(gameObject.name+"_Walk");
        float distance = Vector2.Distance(_rb.position, path.vectorPath[_currentWaypoint]);
-       if (distance < _nextWaypointD)
-       {
+       if (distance < _nextWaypointD){
            _currentWaypoint++;
-        } 
+       }  
     }
 
     private void Attack()
