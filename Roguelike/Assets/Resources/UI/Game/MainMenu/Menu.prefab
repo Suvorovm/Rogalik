@@ -62,6 +62,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Image
       objectReference: {fileID: 0}
+    - target: {fileID: 5381626466055087480, guid: 94593352fd190fa4a8710bf62fc9840f, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381626466055087480, guid: 94593352fd190fa4a8710bf62fc9840f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d359ac3cb9edca449ef336dee3c177b, type: 3}
     - target: {fileID: 5381626466055087481, guid: 94593352fd190fa4a8710bf62fc9840f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
